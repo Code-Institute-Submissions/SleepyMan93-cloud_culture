@@ -4,7 +4,7 @@ Cloud Culture
 ##### Created by William Donovan
 
 ![Project Displays](static/images/cover_photo.png)
-[link to Project](https://escro-games.herokuapp.com/)
+
 
 # Table of Contents 
 
@@ -90,7 +90,12 @@ I wanted to create a site that reflects the name Cloud Culture but also the over
 
 ## App Functionality Testing
 
-### **Setting up Flask environment**
+### **Setting up Django environment**
+To setup my Django framework and begin developmnent, I checked through four stages:
+* Installed Django using **pip3 install django**
+* Created the admin folders inside the main directory using **django-admin startproject (project name)**
+* Made sure the server was working by starting it with **python3 manage.py runserver**
+* Once I was shown a success Django message on Port8000, I made the inital database migrations with **python3 manage.py migrate**
 
 ### **Connecting Flask with MongoDB**
 
