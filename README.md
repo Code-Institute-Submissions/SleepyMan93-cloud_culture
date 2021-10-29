@@ -30,6 +30,7 @@ Cloud Culture
       * Python
    - User Testing
    - Manual Testing
+   - Automatic Testing
 3. [Mongo Databse](#mongodb)
 4. [Bugs / De-bugging / Syntax Issues](#bugs)
 5. [Technologies Used](#languages)
@@ -102,7 +103,8 @@ To setup my Django framework and begin developmnent, I checked through four stag
 ### **Python App Views**
 
 ## Life Cycle
-
+Upon setting up my Django environment and establising allauth is functional, the first step was to copy accross the allauth templates into my directory for customisation.
+Inside the 'templates' folder is where these and my other frontend templates are stored. 
 
 ## HTML CSS and Python validation checks
 
@@ -149,6 +151,8 @@ To setup my Django framework and begin developmnent, I checked through four stag
 ✔️ Search posts on site: If results found, post is rendered on the home page. If no results, message stating no results found and a return to home page button produced. 
 
 ✔️ Try logging in with the credentials from the deleted account: Get an error message. 
+
+## Automatic Tetsing
 
 # Bugs / De-Bugging / Syntax Issues<a name="bugs"></a>
 
