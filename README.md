@@ -101,10 +101,19 @@ To setup my Django framework and begin developmnent, I checked through four stag
 ### **Connecting Flask with MongoDB**
 
 ### **Python App Views**
+Process of setting up views with Django and Python:
+* First setp was to initiate a home app using **manage.py startapp home** and insert a templates folder
+* After creating the basic blocks ie. {% block content %} inside **index.html**, the next step is to create a view for this template inside the 'home' **views.py** - insert photo of basic first view
+* From here, the **urls.py** content was copied from the main directory into another **urls.py** file inside the 'home' app template, to be used as a shell
+* Once the path has been created in the 'home' **urls.py** file, a path to the shell is needed inside the project level **urls.py** file
+* The last thing to do is add the 'home' app into **settings.py** and wire up the template directories (root and the custome allauth)
 
 ## Life Cycle
 Upon setting up my Django environment and establising allauth is functional, the first step was to copy accross the allauth templates into my directory for customisation.
 Inside the 'templates' folder is where these and my other frontend templates are stored. 
+
+The next step was to create the 'home' app in which my 'index' and other frontend page views would be rendered from. After setting up my first app view, if working, the 'index.html' should render 'We Are Working' as a bootstrap success class. This helped with making sure not only the app view was working but also Bootstrap and the JS script tags.
+- Insert screen shot of We Are Working
 
 ## HTML CSS and Python validation checks
 
@@ -157,6 +166,9 @@ Inside the 'templates' folder is where these and my other frontend templates are
 # Bugs / De-Bugging / Syntax Issues<a name="bugs"></a>
 
 ## Errors
+After initialising my **index.html** file and adding the installed view/app, I was met with a 'TemplateDoesNotExist' page. The server started correctly but the path I made seemed to cause the error:
+- photo of error page
+   To resolve the issue, I understood the error was not arising from the Python App View or code because the server ran with no issue. The problem lied within my filepath. The **index.html** file was not in the 'templates/home' folder but actually just inside 'templates'. The filepath should be **app_name > templates > app_name > index.html**
 
 ## Bugs
 
