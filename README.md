@@ -115,6 +115,9 @@ Inside the 'templates' folder is where these and my other frontend templates are
 The next step was to create the 'home' app in which my 'index' and other frontend page views would be rendered from. After setting up my first app view, if working, the 'index.html' should render 'We Are Working' as a bootstrap success class. This helped with making sure not only the app view was working but also Bootstrap and the JS script tags.
 - Insert screen shot of We Are Working
 
+After setting up all my functionality, I could start to build the homepage. My first stage was to create a basic template using Bootstrap and some basic HTML. The process started by making a header for nav links, search bar and logo, the main banner image container and the basic 'Shop Now' button. Once all these components were working and in place, I linked my **base.css** style sheet to the **base.html** file and styled the content. Below is an image of the groundwork used to build the homepage:
+- insert image homepage_basic
+
 ## HTML CSS and Python validation checks
 
 ### HTML
@@ -170,7 +173,16 @@ After initialising my **index.html** file and adding the installed view/app, I w
 - photo of error page
    To resolve the issue, I understood the error was not arising from the Python App View or code because the server ran with no issue. The problem lied within my filepath. The **index.html** file was not in the 'templates/home' folder but actually just inside 'templates'. The filepath should be **app_name > templates > app_name > index.html**
 
+When creating a pathfile in **setting.py** for my static folder, the "STATICFILES_DIR" produced this error:
+- insert static_dir_error
+To rectify the issue, as per the error message, I made the "STATICFILES_DIR" os.path into a tuple with this syntax | **STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)**
+
 ## Bugs
+Encountered my first bug when building the homepage template. Everything appeared on screen as expted, with the search fucntion returning "q='search input'" signalling success but the dropdown functionality wasn't present. 
+- insert photo dropdown_bug
+The bug fix was due to JS and using Bootstrap 4 classes when I installed Bootstrap 5 with this project. To correct the issue, in Bootstrap 5, the "data-toggle" class has now been changed to "data-bs-toggle", the dropdown functionality is now working. 
+
+
 
 # Technologies Used <a name="languages"></a>
 
