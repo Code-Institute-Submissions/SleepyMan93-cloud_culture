@@ -23,6 +23,11 @@ body {
     text-transform: uppercase;
 }
 
+.main-logo-link {
+    width: fit-content;
+}
+
+
 .shop-now-button {
     background: #5A4AE3;
     color: #F0EDEE;
@@ -58,6 +63,14 @@ body {
 
 .border-black {
     border: 1px solid #0A090C !important;
+}
+
+.bg-grey {
+    background: #e4e4e4 !important
+}
+
+.sub-menu {
+    margin-right: 5rem;
 }
 
 /* -------------------------------- Media Queries */
