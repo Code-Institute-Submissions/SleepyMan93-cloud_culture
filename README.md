@@ -176,6 +176,8 @@ After initialising my **index.html** file and adding the installed view/app, I w
 - photo of error page
    To resolve the issue, I understood the error was not arising from the Python App View or code because the server ran with no issue. The problem lied within my filepath. The **index.html** file was not in the 'templates/home' folder but actually just inside 'templates'. The filepath should be **app_name > templates > app_name > index.html**
 
+Found an error with my filter query functionality. The 'mods' category was correctly displaying all items in category pk1 / mods but none of the other categories displayed their products correctly. By deleting all the product urls but copying the mods syntax because I knew this one was rendering correctly, I was able to resolve the issue. I pasted "{% url 'products' %}?category=mods" back into the anchor href, reloaded the page and the **mods** product page was rendering correctly. Then by pasting in this syntax to the other anchor links, just changing the category name, I was able to determine that the "accessory" page was the only one not working. I left this out from the "All Products" query and this page now loaded successfully with all the "Mod" and "Disposbale" vape products. 
+
 When creating a pathfile in **setting.py** for my static folder, the "STATICFILES_DIR" produced this error:
 - insert static_dir_error
 To rectify the issue, as per the error message, I made the "STATICFILES_DIR" os.path into a tuple with this syntax | **STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)**
