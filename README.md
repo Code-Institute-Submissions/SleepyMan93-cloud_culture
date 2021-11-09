@@ -185,6 +185,13 @@ The bug fix was due to JS and using Bootstrap 4 classes when I installed Bootstr
 When testing the responivness of my current elements, mainly the navbar section, I found two scaling issues. Using 'includes' I made a seperate HTML file for the navbar on mobile, essentially collapsing the content into icons. Using **d-block** and **d-lg-none**, the idea was to use template literals and inject the seperate HTML file after the standard navbar and for it to only show on small sizes and below. However, the ul was still showing as block, pushing the main-nav links right of center. Also when using dev tools, the icon and content appeared on a seperate line from the main-nav expandable dropdown. The image below demonstrates this:
 - insert responsive-bug image
 
+Found an issue when first rendering the "all products" page. As you can see from the image, the parent div has a class of "text-center" which should include line breaks. However, even with this class the line break wouldn't center under the page title: 
+- insert screen shot of off center hr rule
+
+Encountered a bug when trying to render an individual product page. I was met with a NameError, I believe to be originating from the product.views file:
+- insert screen shot single_product_bug
+The bug fix was found on line 24 as the error suggested. As I used the "all_products" view as the shell for the "product_details" view, I forgot to remove the s from the line "product = get_object_or_404(Product, pk=product_id)" meaning **'product': product,** could not be defined.
+
 
 
 # Technologies Used <a name="languages"></a>
