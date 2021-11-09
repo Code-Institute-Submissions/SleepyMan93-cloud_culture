@@ -1,0 +1,394 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "001a",
+            "name": "MBAR Disposable Vape Pen",
+            "description": "The SMOK MBAR is a disposable vape pen designed for convenience and ease of use. Providing an inhale similar to smoking traditional cigarettes, the MBAR is the perfect entry level device. Filled with 1.3ml of salt based nicotine in a 20mg strength and integrated with a 280mAh battery the MBAR offers the equivalent of 400 puffs per device\" With a simple draw activation the MBAR offers the ultimate convenience in a slimline pocket-friendly design. Available in a choice of flavours, the MBAR caters for almost every flavour preference.",
+            "price": 4.95,
+            "category": 2,
+            "rating": 4.3,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Smok-Mbar-Blue-Raspberry_600x.jpg?v=1633600334",
+            "image": "Smok-Mbar-Blue-Raspberry_600x.jpg"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "sku": "002a",
+            "name": "Elf Bar Disposable Vape Pen",
+            "description": "The ELF Bar is a disposable vape pen coming pre-filled with 2ml 20mg nicotine salt e-liquid. Featuring a non-rechargeable 550mAh battery, the ELF bar delivers approximately 550-600 puffs per individual device. Designed to deliver a discreet amount of vaper, and providing a mouth to lung style inhale perfect for those looking to quit smoking\" With a slim and compact form factor, the ELF bar is inhale activated and has no fiddly settings or fire button.",
+            "price": 4.95,
+            "category": 2,
+            "rating": 4,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Elf-Bar-600-Mango_600x.jpg?v=1633598666",
+            "image": "Elf-Bar-600-Mango_600x.jpg"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+            "sku": "003a",
+            "name": "Nasty Fix 2.0 Disposable Vape Kit",
+            "description": "Brought to you from Nasty Juice, the Nasty Fix 2.0 disposable device is a re-designed version of the original Nasty Fix. With a host of upgraded and new features, the Nasty Fix 2.0 offers up to 675 puffs per device, plus an innovative 'Airfix' tech adjustable airflow\" The Nasty Fix 2.0 has been developed to deliver the most popular Nasty Juice flavours in the most convenient and straight forward way. Ready to use right out of the box, the Nasty Fix 2.0 comes supplied with a pre-charged 700mAh battery (non-rechargeable) and loaded with 2ml of Nasty Juice 10mg or 20mg nic salt e-liquid\" With an innovative 'Airfix' tech adjustable airflow, a first for a disposable device, simply rotate the base of the device to switch between a tighter draw for a bigger throat hit, or an airier draw for more cloud.",
+            "price": 5.95,
+            "category": 2,
+            "rating": 3.8,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Nasty-Fix-Mango-Cushman_600x.jpg?v=1633600165",
+            "image": "Nasty-Fix-Mango-Cushman_600x.jpg"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+            "sku": "001b",
+            "name": "Grus Vape Mod",
+            "description": "The Lost Vape Grus Mod is an advanced box mod, powered by a choice of either a single 18650, 20700 or 21700 battery (not supplied) and has a maximum power output of 100W. Featuring an extensive temperature control suite, the Lost Vape Grus pairs very nicely with a rebuildable tank and is ideal for advanced vapers.",
+            "price": 28.95,
+            "category": 1,
+            "rating": 4.8,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Grus-Vape-Mod-By-Lost-Vape-SS-Zebra-Wood_600x.jpg?v=1631791806",
+            "image": "Grus-Vape-Mod-By-Lost-Vape-SS-Zebra-Wood_600x.jpg"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+            "sku": "002b",
+            "name": "Obelisk 120FC Mod",
+            "description": "The Obelisk FC 120 Box Mod by Geek Vape is the world's first vaping device featuring safe rapid recharge, with a 15 minute approximate recharge time. Featuring a large 3700mAh internal battery, which can also double up as a charging power bank for other electrical equipment (e.g. mobile phones)\" The Geek Vape Obelisk FC 120 mod not only offers a generous battery capacity, but also a high 120 wattage power capability. Aside from operating the mod in wattage or power mode, the Obelisk also offers an extensive temperature suite, supporting nickel, stainless steel and titanium coil wire.",
+            "price": 49.95,
+            "category": 1,
+            "rating": 4.8,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Grus-Vape-Mod-By-Lost-Vape-SS-Zebra-Wood_600x.jpg?v=1631791806",
+            "image": "Obelisk-Mod-By-Greek-Vape_600x.jpg"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+            "sku": "003b",
+            "name": "Aegis Legend 200W Mod",
+            "description": "The Aegis Legend is durable, powerful and functional, all dressed up in an aesthetically pleasing package. Powered by dual-18650 batteries the Geek Vape Aegis Legend mod can fire at up to 200 watts but also features temperature control with support for multiple coil types. Constructed from hardy materials including stainless steel, silicone and zinc alloy the Legend is waterproof, drop resistant and dust proof. Perfect for a busy vaper who’s looking for something powerful and long lasting.",
+            "price": 44.95,
+            "category": 1,
+            "rating": 5,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Aegis-Legend-200W-Mod-By-Geek-Vape-black_600x.jpg?v=1604659812",
+            "image": "Aegis-Legend-200W-Mod-By-Geek-Vape-black_600x.jpg"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+            "sku": "004b",
+            "name": "Glint Vape Mod",
+            "description": "The Aspire Glint Mod is a lightweight variable wattage box mod, powered by a single 18650 battery (not supplied) and has a maximum power output of 75W. A simple to use mod which is ideal for both intermediate and advanced vapers, this box mod can fire between 1 and 75 watts and with it's 510 connector pin the Glint Mod can be paired with most mouth to lung and sub-ohm tanks\" The mod features a 0.91 inch OLED screen displays all vital user information such as resistances, watts and voltage, and is easily controlled with a three button operation. Powered by an external 18650 battery, which must be purchased separately, the Glint Mod features 2A Type C Fast Charging.",
+            "price": 29.95,
+            "category": 1,
+            "rating": 5,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Glint-Vape-Mod-By-Aspire-Stainless-Steel_600x.jpg?v=1592555707",
+            "image": "Glint-Vape-Mod-By-Aspire-Stainless-Steel_600x.jpg"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+            "sku": "005b",
+            "name": "Deco Vape Mod",
+            "description": "The Aspire Deco Mod is a advanced variable wattage box mod, powered by a single 21700 or 18650 battery (not supplied) and has a maximum power output of 100W. A simple to use mod which is ideal for both intermediate and advanced vapers, this box mod can fire between 1 and 100 watts when using a 21700 battery cell, or up to 85W with the use of an 18650 battery. Fitted with a 510 connector pin the Deco Mod can be paired with most mouth to lung and sub-ohm tanks.",
+            "price": 24.95,
+            "category": 1,
+            "rating": 4.85,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/DecoVapeModByAspireblue_600x.jpg?v=1600429172",
+            "image": "DecoVapeModByAspireblue_600x.jpg"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+            "sku": "001c",
+            "name": "PockeX Pyrex Tube",
+            "description": "This is a replacement glass for the Aspire Pockex Pen Kit. A direct replacement for your Pockex Tank, finished in metal with a pyrex inner tube.",
+            "price": 3.95,
+            "category": 3,
+            "rating": 4.85,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/aspire-pockex-replacement-glass-black_600x.jpg?v=1542632771",
+            "image": "aspire-pockex-replacement-glass-black_600x.jpg"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+            "sku": "002c",
+            "name": "NRG Mini Tank Glass",
+            "description": "Made from top quality Pyrex glass this Replacement Glass Tube is designed for use with the Vaporesso NRG Mini Tank.",
+            "price": 2.95,
+            "category": 3,
+            "rating": 2,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/vaporesso-drizzle-replacement-glass_1_2_600x.jpg?v=1542629562",
+            "image": "vaporesso-drizzle-replacement-glass_1_2_600x.jpg"
+        }
+    },    
+    {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+            "sku": "003c",
+            "name": "RoamX Tube Travel Adaptors",
+            "description": "XSories are creators of high end accessories for all walks of life. The RoamX Tube includes travel adaptors that work in over 120 countries, including UK, EU, US and Asia plugs. Charge your vape in whatever country you find yourself with this great value pack.",
+            "price": 9.99,
+            "category": 3,
+            "rating": 0,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/xsories-roamx-tube-travel-adaptors_72d7e95e-4ba7-4066-b73e-8207bd73de1a_600x.jpg?v=1542633907",
+            "image": "xsories-roamx-tube-travel-adaptors_72d7e95e-4ba7-4066-b73e-8207bd73de1a_600x.jpg"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+            "sku": "004c",
+            "name": "USB Charging Cable For Hexa Pod",
+            "description": "Designed for use with the Hexa Pod Vape Kit, this USB charging cable features a magnetic attachment to the device and fast charging. Reported to fully charge the Hexa Kit within 1 hour of charging.",
+            "price": 4.95,
+            "category": 3,
+            "rating": 0,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/hexa-usb-charger_600x.jpg?v=1551097649",
+            "image": "hexa-usb-charger_600x.jpg"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "products.product",
+        "fields": {
+            "sku": "005c",
+            "name": "Fuzion Cotton",
+            "description": "Super fluffy, highly absorbent and provides you with super flavour Fuzion Cotton is the ideal partner for your favourite RDA or RTA. 100% organic, Fuzion Cotton is manufactured in the Phillipines, and is supplied in a small tub consisting of 27.5g of cotton. There is approximately 196cm (6.43ft) reel of wick, allowing you to cut and trim your designated size of cotton for your vaping needs.",
+            "price": 6.95,
+            "category": 3,
+            "rating": 0,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Fuzion-Cotton_600x.jpg?v=1587658348",
+            "image": "Fuzion-Cotton_600x.jpg"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "products.product",
+        "fields": {
+            "sku": "001d",
+            "name": "Strawberry Savage Shortfill E-Liquid",
+            "description": "Great on its own or mixed with another of your favourite juices, Strawberry Savage is a plain and simple good old strawberry. Sweet, fresh and an absolute vaping classic.",
+            "price": 7.95,
+            "category": 5,
+            "rating": 4.1,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Strawberry-Savage-Shortfill-E-Liquid-by-Juice-Monster_600x.jpg?v=1575907870",
+            "image": "Strawberry-Savage-Shortfill-E-Liquid-by-Juice-Monster_600x.jpg"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "products.product",
+        "fields": {
+            "sku": "002d",
+            "name": "Mango & Passion Fruit 50/50",
+            "description": "Mango & Passion Fruit by Just Juice is now available in a 50/50 ratio with freebase nicotine. A tropical and fresh tasting vape, this classic pairing of mango and passion fruit delivers a smooth and juicy inhale, followed by a sweet exotic exhale.",
+            "price": 7.95,
+            "category": 5,
+            "rating": 4.1,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Mango-_-Passion-Fruit-5050-E-Liquid-by-Just-Juice_600x.jpg?v=1591114171",
+            "image": "Mango-_-Passion-Fruit-5050-E-Liquid-by-Just-Juice_600x.jpg"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "products.product",
+        "fields": {
+            "sku": "003d",
+            "name": "Grape Raspberry Blackcurrant Nic Salt",
+            "description": "Okay! Orange - Grape Raspberry Blackcurrant Nic Salt E-Liquid features offers the light and refreshing flavour of flavour of white grape, tart raspberries and juicy blackcurrant making this vape juice the perfect combination of tart and sweet\" Available in a 10ml bottle with nicotine dosages to suit every vaper at 5mg, 10mg and 20mg.",
+            "price": 3.95,
+            "category": 5,
+            "rating": 0,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Grape-Raspberry-Blackcurrant-Nic-Salt-by-Okay-Orange_600x.jpg?v=1633354411",
+            "image": "Grape-Raspberry-Blackcurrant-Nic-Salt-by-Okay-Orange_600x.jpg"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "products.product",
+        "fields": {
+            "sku": "004d",
+            "name": "Blue Raspberry E-Liquid",
+            "description": "Doozy Vapes Blue Raspberry is a sweet candied Raspberry flavour. Served up in a 50/50 VG/PG blend, perfect for mouth to lung vapers. Blue Raspberry by Doozy is a vibrant and refreshing e-liquid, that perfectly balances fruit and candy\" Available in a 10ml bottle in either a 6mg, 12mg or 18mg nicotine strength.",
+            "price": 2.95,
+            "category": 5,
+            "rating": 5,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/BlueRaspberryE-LiquidbyDoozyVapes_600x.jpg?v=1605774519",
+            "image": "BlueRaspberryE-LiquidbyDoozyVapes_600x.jpg"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "products.product",
+        "fields": {
+            "sku": "005d",
+            "name": "Blackcurrant Nic Salt E-Liquid",
+            "description": "Fruitz Blackcurrant nic salt e-liquid is a fragrant, sweet and slightly tangy vape of blackcurrant. A tart top note of blackcurrant mellows into a sweeter base for a soft finish\" Fruitz nic salts are available in a 10mg or 20mg strength, delivering a higher level of nicotine that is more readily absorbed so you can keep those cravings at bay.",
+            "price": 3.95,
+            "category": 5,
+            "rating": 0,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Blackcurrant-Nic-Salt-by-Fruitz_600x.jpg?v=1626170153",
+            "image": "Blackcurrant-Nic-Salt-by-Fruitz_600x.jpg"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "products.product",
+        "fields": {
+            "sku": "001e",
+            "name": "Fortis Vape Kit",
+            "description": "The SMOK Fortis is ideal for sub-ohm vapers who prefer to have their head in the clouds. The Fortis will produce massive clouds while also delivering a nostalgic throat hit. The Fortis mod is paired with the TFV Mini V2 Tank 2ml tank, compatible with the TFV Mini Coils\" Constructed from lightweight and durable zinc alloy, the Fortis is finished with a smooth soft-touch full grained leather panels for a comfortable hold.",
+            "price": 44.95,
+            "category": 6,
+            "rating": 5,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Fortis-Vape-Kit-by-Smok-Black_600x.jpg?v=1630503267",
+            "image": "Fortis-Vape-Kit-by-Smok-Black_600x.jpg"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "products.product",
+        "fields": {
+            "sku": "002e",
+            "name": "VooPoo Vinci Pod Kit",
+            "description": "The Voopoo Vinci pod kit is a refillable vape pod system, adopting a 800mAh built-in battery and offering a maximum wattage output of 15W. Utilising 2ml capacity refillable pods, which feature an integrated 0.8ohm resistance coil for a mouth to lung style vape. Best suited for high PG and nic salt e-liquids, the Vinci Pod by Voopoo is a great introductory vape kit for new vapers.",
+            "price": 30.95,
+            "category": 6,
+            "rating": 0,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Voopoo-Vinci-Pod-Bundle_600x.jpg?v=1620215384",
+            "image": "Voopoo-Vinci-Pod-Bundle_600x.jpg"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "products.product",
+        "fields": {
+            "sku": "003e",
+            "name": "Juul C1 Starter Kit",
+            "description": "The Juul C1 is the next level in vaping technology, with an Android app that allows you to track your use as well as lock your device and search for it if you’ve misplaced it. This kit includes the C1 device as well as four flavoured pods so you can try them all and find your favourite. Juul is the ultimate in low maintenance vaping, just click your pod of choice into the battery and inhale to vape\" PLEASE NOTE THAT DUE TO RESTRICTIONS WE CANNOT SHIP ANY JUUL PRODUCTS OUTSIDE OF THE UK. ORDERS BEYOND THE UK WILL NOT BE PROCESSED.",
+            "price": 14.95,
+            "category": 6,
+            "rating": 5,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Juul-C1-Starter-Kit-Box_600x.jpg?v=1570796176",
+            "image": "Juul-C1-Starter-Kit-Box_600x.jpg"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "products.product",
+        "fields": {
+            "sku": "001f",
+            "name": "Orion Q Ultra Refillable Pods - 2 Pack",
+            "description": "This is a 2 pack of refillable pods designed for use with the Lost Vape Orion Ultra 40W Pod System. The Orion Q-Ultra 2ml replacement pods feature interchangeable coils and can be used with either a 0.3ohm, 0.6 ohm mesh coil or a 1.0 ohm regular coil - coils are sold separately\" The Lost Vape Orion Q Ultra pods feature adjustable airflow which sits just beneath the drip tip. With a simple installation, simply click the pods onto the device. Refilling is also made simple via the threaded top fill cap.",
+            "price": 4.95,
+            "category": 4,
+            "rating": 5,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Orion-Q-Ultra-Refillable-Pods---2-Pack-by-Lostvape_600x.jpg?v=1591173320",
+            "image": "Orion-Q-Ultra-Refillable-Pods---2-Pack-by-Lostvape_600x.jpg"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "products.product",
+        "fields": {
+            "sku": "002f",
+            "name": "Lost Vape Ursa Mini Pod Kit Bundle",
+            "description": "The Lost Vape Ursa Mini pod kit is an elegantly designed and compact pod device, capable of between 5-30 watts power output and powered by a 1200mAh internal rechargeable battery. Utilising the UB Lite coils by Lost Vape, the Ursa Mini is a versatile option that can be used for both DTL and MTL vaping with resistances available in 0.4 - 1.4ohm\" A pocket-friendly option, the Ursa Mini is constructed from durable and lightweight zinc alloy and completed in a choice of some vibrant and stylish colour schemes. Equipped with a side facing 0.69inch OLED screen to clearly display settings and battery levels, the device is controlled via two adjustment buttons and a large fire button.",
+            "price": 38.95,
+            "category": 4,
+            "rating": 0,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Lost-Ursa-Mini-Bundle_600x.jpg?v=1635857737",
+            "image": "Lost-Ursa-Mini-Bundle_600x.jpg"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "products.product",
+        "fields": {
+            "sku": "003f",
+            "name": "Skully Gum Shortfill E-Liquid",
+            "description": "Combining your old sweet shop favourites into one sweet vape, Skully Gum is a sweet tooths dream. A sugary blackcurrant flavoured jawbreaker flavour comes through on the inhale, developing into a fruity bubblegum base at its core.",
+            "price": 14.95,
+            "category": 4,
+            "rating": 2,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Skully-Gum-Shortfill-E-Liquid-by-Bones_600x.jpg?v=1572017998",
+            "image": "Skully-Gum-Shortfill-E-Liquid-by-Bones_600x.jpg"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "products.product",
+        "fields": {
+            "sku": "001g",
+            "name": "XROS 2 Pod Kit",
+            "description": "The Vaporesso XROS 2 pod kit is a refillable pod system offering 16W power output, and powered by an internal 1000mAh battery. Boasting a compact size, measuring in at 112.2mm high and 13.4mm thick, the XROS 2 makes for the perfect companion and on-the-go vape kit\" Featuring a new curved body and a sleek and intuitive feel in the palm of your hand. The Vaporesso XROS 2 has a maximum wattage output of 16W along with manual and automatic firing options.",
+            "price": 21.95,
+            "category": 7,
+            "rating": 2,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Xros-2-Pod-Kit-by-Vaporesso-grape-Purple_600x.jpg?v=1633103759",
+            "image": "Xros-2-Pod-Kit-by-Vaporesso-grape-Purple_600x.jpg"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "products.product",
+        "fields": {
+            "sku": "002g",
+            "name": "Cherry On Top 50ml Shortfill E-Liquid",
+            "description": "Six Licks Cherry On Top is a 50ml shortfill e-liquid that serves up a fresh bowl of red raspberries and candied pears topped with a heaping portion of red cherries. Cherry On Top offers sweet flavour from raspberries and pears and finishes with a tsunami of cherries on the exhale. Supplied in a large 60ml short-filled bottle, filled with 50ml zero nicotine e-liquid.",
+            "price": 13.95,
+            "category": 7,
+            "rating": 2,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Cherry-On-Top-50ml-Shortfill-by-Six-Licks_600x.jpg?v=1634298298",
+            "image": "Cherry-On-Top-50ml-Shortfill-by-Six-Licks_600x.jpg"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "products.product",
+        "fields": {
+            "sku": "003g",
+            "name": "Mate 500 Pre-Filled Pods",
+            "description": "A pack of 2 replacement Mate 500 pods for the ELF Bar Mate 500 re-chargeable pod kit. Each refillable pod has a 2ml pod capacity and is pre-filled with 20mg of nic salt. The ELF Bar Mate 500 is best suited for mouth to lung vapers who prefer discreet vapour over a cloudy exhale. You'll enjoy approximately 500 puffs with each nic salt vape pod.",
+            "price": 4.95,
+            "category": 7,
+            "rating": 0,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/Blueberry-P1-Prefilled-Pod-By-Elf-Bar_600x.jpg?v=1635933089",
+            "image": "Blueberry-P1-Prefilled-Pod-By-Elf-Bar_600x.jpg"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "products.product",
+        "fields": {
+            "sku": "004g",
+            "name": "V800 Disposable Vape Pen",
+            "description": "The Dinner Lady V800 disposable vape pen is a premium disposable that delivers double the amount of puffs as the previous Dinner Lady device, with up to 800 puffs per kit. Available in 18 delicious flavours, the V800 has been designed to provide even better flavour through the use of increased concentrate. Featuring a non-rechargeable 550mAh battery, and a LED light system to indicate when e-liquid levels are depleted\" Setting a new standard in the disposable vape kit market, the Dinner Lady V800 disposable features an adjustable airflow control at the base, allowing you to adjust the air intake for an airier or restricted draw. This coupled with a whopping 800 puffs per device, sets the V800 apart from the rest.",
+            "price": 5.95,
+            "category": 7,
+            "rating": 0,
+            "image_url": "https://cdn.shopify.com/s/files/1/0054/3965/1958/products/dinner-lady-v800-disposable-pen-lemon-tart_600x.jpg?v=1634800988",
+            "image": "dinner-lady-v800-disposable-pen-lemon-tart_600x.jpg"
+        }
+    }
+]

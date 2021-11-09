@@ -20,8 +20,7 @@ Cloud Culture
    - Features and Future Implementations 
 2. [Testing](#testing)
    - App Functionality Testing
-      * Setting up Flask Environment
-      * Connecting Flask with MongoDB
+      * Setting up Django Environment
       * Python App Views
       * Life Cycle
    - HTML, CSS and Python checks
@@ -98,8 +97,6 @@ To setup my Django framework and begin developmnent, I checked through four stag
 * Made sure the server was working by starting it with **python3 manage.py runserver**
 * Once I was shown a success Django message on Port8000, I made the inital database migrations with **python3 manage.py migrate**
 
-### **Connecting Flask with MongoDB**
-
 ### **Python App Views**
 Process of setting up views with Django and Python:
 * First setp was to initiate a home app using **manage.py startapp home** and insert a templates folder
@@ -117,6 +114,9 @@ The next step was to create the 'home' app in which my 'index' and other fronten
 
 After setting up all my functionality, I could start to build the homepage. My first stage was to create a basic template using Bootstrap and some basic HTML. The process started by making a header for nav links, search bar and logo, the main banner image container and the basic 'Shop Now' button. Once all these components were working and in place, I linked my **base.css** style sheet to the **base.html** file and styled the content. Below is an image of the groundwork used to build the homepage:
 - insert image homepage_basic
+
+The next process of my build was to create some "json" fixtures for my products and categpories to go. At first I was slightly confused how to make these from scratch but after making my mentor Gerry explained the "many to one" and "one to many" theory with database structure, the schema made sense which in turn, helped build the models and fixtures. After making the initial 7 categories, I tried adding my products via the admin panel on the site. Unfortuantely, only the images uplaoded transferred into the project directory, the "json" file was not updated with product information. From here, I manually built the product fixture and input, two sets of item data to test it was pulling through. Following the cmd "python3 manage.py loaddata products", on the products page I was met with two product query sets as text, which indicated success, see image below:
+- insert image of query set product page
 
 ## HTML CSS and Python validation checks
 
