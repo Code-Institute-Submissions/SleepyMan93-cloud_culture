@@ -203,7 +203,11 @@ The bug fix was found on line 24 as the error suggested. As I used the "all_prod
 
 When testing my Javascript for the sorting box method, I found a bug trying to sort the products by 'Name A-Z / Z-A'. The issue was found in **view.py** on line 24, stating that "Lower" had not been defined.. see below:
 - Insert Lower bug
-After reassessing my code, it appeared that I hadn't imported the "Lower" function needed for the if statement to work. Once imported, the category dropdown selection works. 
+After reassessing my code, it appeared that I hadn't imported the "Lower" function needed for the if statement to work. Once imported, the category dropdown selection works.
+
+Found a bug when making the shopping bag page. The page a view successfully load but for some reason only the "keep shopping" with chevron is the only content that appears on the page:
+- insert shopping bag bug
+The issue was due to the bag content not displaying under the header content. It took me a while to work out the issue but in the end, I used the **products.html** template as the base because this content was displaying correctly. In the end, the bug was due to the content being inside the "overlay" div. Once placed underneath, the content displayed as should.
 
 
 
