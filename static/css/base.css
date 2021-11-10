@@ -116,6 +116,13 @@ a.category-badge > span.badge:hover {
     justify-content: center;
 }
 
+.img-display {
+    padding-right: 4rem !important;
+}
+
+.checkout-section {
+    border-bottom: 0px;
+}
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -137,6 +144,13 @@ a.category-badge > span.badge:hover {
 
     .header-container {
         padding-top: 164px;
+    }
+}
+
+/* checkout image padding correction on mobile */
+@media (max-width: 768px) {
+    .img-display {
+        padding-right: 2rem !important;
     }
 }
 
