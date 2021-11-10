@@ -124,6 +124,8 @@ Once I knew the product query sets were loading, I could move on to creating the
 After this I focused on the shopping bag functionality. Once the views, template and urls were developed, I aimed to test the **add_to_bag** function as a print request to the terminal. After a few bug corrections, I was able to add a few products to the bag and have their **PK** show up with the amount ordered in the terminal. See below:
 - insert shopping bag success
 
+Made some slight structural changes to my categories. The liquid is now categorised by flavour rather than "Vape_liquid". Hoping this will help with user experience and overall use of the site.
+
 ## HTML CSS and Python validation checks
 
 ### HTML
