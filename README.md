@@ -178,7 +178,9 @@ After initialising my **index.html** file and adding the installed view/app, I w
 
 Found an error with my filter query functionality. The 'mods' category was correctly displaying all items in category pk1 / mods but none of the other categories displayed their products correctly. By deleting all the product urls but copying the mods syntax because I knew this one was rendering correctly, I was able to resolve the issue. I pasted "{% url 'products' %}?category=mods" back into the anchor href, reloaded the page and the **mods** product page was rendering correctly. Then by pasting in this syntax to the other anchor links, just changing the category name, I was able to determine that the "accessory" page was the only one not working. I left this out from the "All Products" query and this page now loaded successfully with all the "Mod" and "Disposbale" vape products.
 
-The same error occurred when trying to load products in the 'new_arrivals' category. I decided to move on and assess the situation later which actually provided me with the solution. After creating the "request.GET" method for **sorting** and created a category link for every product, I noticed that what should have been products in 'accessories' and 'new_arrivals' were showing old category names as shown below. This signaled to me, the **categories.json** file had not been loaded into the database with the new category names. Once loaded, the category pages rendered with the correct products. 
+The same error occurred when trying to load products in the 'new_arrivals' category. I decided to move on and assess the situation later which actually provided me with the solution. After creating the "request.GET" method for **sorting** and created a category link for every product, I noticed that what should have been products in 'accessories' and 'new_arrivals' were showing old category names as shown below. 
+- Insert photo of wrong category names
+This signaled to me, the **categories.json** file had not been loaded into the database with the new category names. Once loaded, the category pages rendered with the correct products. 
 
 When creating a pathfile in **setting.py** for my static folder, the "STATICFILES_DIR" produced this error:
 - insert static_dir_error
@@ -198,6 +200,10 @@ Found an issue when first rendering the "all products" page. As you can see from
 Encountered a bug when trying to render an individual product page. I was met with a NameError, I believe to be originating from the product.views file:
 - insert screen shot single_product_bug
 The bug fix was found on line 24 as the error suggested. As I used the "all_products" view as the shell for the "product_details" view, I forgot to remove the s from the line "product = get_object_or_404(Product, pk=product_id)" meaning **'product': product,** could not be defined.
+
+When testing my Javascript for the sorting box method, I found a bug trying to sort the products by 'Name A-Z / Z-A'. The issue was found in **view.py** on line 24, stating that "Lower" had not been defined.. see below:
+- Insert Lower bug
+After reassessing my code, it appeared that I hadn't imported the "Lower" function needed for the if statement to work. Once imported, the category dropdown selection works. 
 
 
 
