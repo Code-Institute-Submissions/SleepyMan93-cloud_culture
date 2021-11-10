@@ -121,6 +121,9 @@ The next process of my build was to create some "json" fixtures for my products 
 Once I knew the product query sets were loading, I could move on to creating the products in the "products.json" and render the fixtures on to the "all_products" template page. Bar the uncentered line, everything pulled through well from the backend and all the product images, price and other information were displayed on the page as should be:
 - insert image of all products page
 
+After this I focused on the shopping bag functionality. Once the views, template and urls were developed, I aimed to test the **add_to_bag** function as a print request to the terminal. After a few bug corrections, I was able to add a few products to the bag and have their **PK** show up with the amount ordered in the terminal. See below:
+- insert shopping bag success
+
 ## HTML CSS and Python validation checks
 
 ### HTML
@@ -208,6 +211,10 @@ After reassessing my code, it appeared that I hadn't imported the "Lower" functi
 Found a bug when making the shopping bag page. The page a view successfully load but for some reason only the "keep shopping" with chevron is the only content that appears on the page:
 - insert shopping bag bug
 The issue was due to the bag content not displaying under the header content. It took me a while to work out the issue but in the end, I used the **products.html** template as the base because this content was displaying correctly. In the end, the bug was due to the content being inside the "overlay" div. Once placed underneath, the content displayed as should.
+
+Encountered another bug with the shopping bag but this time with the functionality. When I tried to add an item to the shopping bag, I was met with a TypeError stating "item_id" was an unexpected keyword argument:
+- insert shopping_update_bug
+As the indicated, the problem was coming from the bag view. I forgot to define item_id as an argument in the "add_to_bag" function. 
 
 
 
