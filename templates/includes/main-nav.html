@@ -29,8 +29,12 @@
                 Juice
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="vape-juice-link">
-                <a href="" class="dropdown-item">Shop By Flavour</a> <!-- Need to revaluate the categories for Liquid into flavours rather than vape_juice -->
-                <a href="" class="dropdown-item">All Liquids</a>
+                <a href="{% url 'products' %}?category=bannana" class="dropdown-item">Bannana</a>
+                <a href="{% url 'products' %}?category=tropical" class="dropdown-item">Tropical</a>
+                <a href="{% url 'products' %}?category=berry" class="dropdown-item">Berry</a>
+                <a href="{% url 'products' %}?category=apple" class="dropdown-item">Apple</a> 
+                <a href="{% url 'products' %}?category=strawberry" class="dropdown-item">Strawberry</a>     
+                <a href="{% url 'products' %}?category=bannana,tropical,berry,apple,strawberry" class="dropdown-item">All Liquids</a>
             </div>
         </li>
 

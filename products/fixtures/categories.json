@@ -35,8 +35,8 @@
         "pk": 5, 
         "model": "products.category", 
         "fields": {
-            "name": "vape_juice", 
-            "friendly_name": "Vape Juice"
+            "name": "bannana", 
+            "friendly_name": "Bannana"
         }
     }, 
     {
@@ -53,6 +53,38 @@
         "fields": {
             "name": "new_arrivals", 
             "friendly_name": "New Arrivals"
+        }
+    },
+    {
+        "pk": 8, 
+        "model": "products.category", 
+        "fields": {
+            "name": "tropical", 
+            "friendly_name": "Tropical"
+        }
+    },
+    {
+        "pk": 9, 
+        "model": "products.category", 
+        "fields": {
+            "name": "strawberry", 
+            "friendly_name": "Strawberry"
+        }
+    },
+    {
+        "pk": 10, 
+        "model": "products.category", 
+        "fields": {
+            "name": "apple", 
+            "friendly_name": "Apple"
+        }
+    },
+    {
+        "pk": 11, 
+        "model": "products.category", 
+        "fields": {
+            "name": "berry", 
+            "friendly_name": "Berry"
         }
     }
 ]
