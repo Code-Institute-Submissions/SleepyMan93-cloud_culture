@@ -22,6 +22,10 @@
             <div class="row">
                 <div class="col">
                     {% if bag_items %} 
+                        {{ bag_items }}
+                        <br>
+                        <br>
+                        {{ request.session.bag }}
                         <div class="table-responsive rounded">
                             <table class="table table-sm">
                                 <thead class="text-black">
@@ -41,7 +45,7 @@
                                          </td>
                                          <td class="py-5">
                                              <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                             <p class="my-0"><strong>Nicotine: </strong>{% if item.has_nicotine %}{{ item.nicotine|upper }}{% else %}N/A{% endif %}</p>
+                                             <p class="my-0"><strong>Nicotine: </strong>{% if item.product.has_nicotine %}{{ item.nicotine }}{% else %}N/A{% endif %}</p>
                                              <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                                          </td>
                                          <td class="py-5">
