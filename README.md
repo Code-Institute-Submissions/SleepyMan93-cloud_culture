@@ -222,6 +222,10 @@ As the indicated, the problem was coming from the bag view. I forgot to define i
 
 Faced a very difficult bug when trying to render the nicotine level in the shopping bag. At first, the view wasn't creating a new item for the same product but with a different nicotine level, this was due to a typo in the bag **views.py**. However, the nicotine level wasn't rendering in the shopping bag, it showed N/A. To make sure there was a value, I placed **{{ item.product.has_nicotine }}** under the for loop to check if the item returned "True", once it had, I knew the nic level was storing in the dictionary. From here, I replaced it with **{{ item.nicotine }}**, which rendered the correct nicotine level. From here, I injected this logic back into the "if" bag statement and the nicotine level is now showing as expected.
 
+Found another bug with the shopping bag where it wasn't displaying the amount selected on the individual product page. 
+- insert bag total bug
+Fix was inside the "contexts.py" file. 'Quantity' was being filled in the dictionary from "item_data" which was from the outer for loop but instead, I needed the quantity to just be the quantity from the inner for loop.
+
 
 
 # Technologies Used <a name="languages"></a>
