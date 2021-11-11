@@ -126,6 +126,8 @@ After this I focused on the shopping bag functionality. Once the views, template
 
 Made some slight structural changes to my categories. The liquid is now categorised by flavour rather than "Vape_liquid". Hoping this will help with user experience and overall use of the site.
 
+Found the bag and increment buttons the hardest part of the project this far. For some reason, I ran into an incredible amount of bugs that needed me to revert back to older commits beacuse the code got too messy. The button would work but for some reaon, on the single product page, pressing "+" would add that item to the bag and vice versa for the "-". Starting from the beginning, I started with making the buttons on this page increase/decrease the item amount first. For this section, I had to mimic quite closely the code from the mini "Boutique Ado" project to get it working. 
+
 ## HTML CSS and Python validation checks
 
 ### HTML
