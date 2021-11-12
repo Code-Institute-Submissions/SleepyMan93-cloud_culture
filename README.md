@@ -137,6 +137,9 @@ Made some slight structural changes to my categories. The liquid is now categori
 Found the bag and increment buttons the hardest part of the project this far. For some reason, I ran into an incredible amount of bugs that needed me to revert back to older commits beacuse the code got too messy. The button would work but for some reaon, on the single product page, pressing "+" would add that item to the bag and vice versa for the "-". Starting from the beginning, I started with making the buttons on this page increase/decrease the item amount first. For this section, I had to mimic quite closely the code from the mini "Boutique Ado" project to get it working. By starting from foundation, I was able to get the shopping bag page fully functional and able to move onto the next stage:
 - insert shopping bag template
 
+The first stage in creating the checkout section for the site was building the backend so that orders placed, initialise an order in the admin section. After successfully creating the app, models and admin.py, the intended section on the admin backend was rendered with the correct model fields and product info.
+- insert image of order back end
+
 ## HTML CSS and Python validation checks
 
 ### HTML
@@ -205,6 +208,21 @@ To rectify the issue, as per the error message, I made the "STATICFILES_DIR" os.
 Found a 'NameError' when trying to create some reaction messages for users interacting with the site:
 - insert success message bug
 The error was coming from the **pk** not being indicated with the item_id, my syntax was "Product.objects.get(pk=item)" when instead it should be "pk=item_id".  
+
+Encountered an error when trying to launch my new checkout app. The backend logic was all stable as the admin panel rendered as expected. The issue came when trying to inject the signals into the frontend. From the terminal, according to the message, the site app wouldn't start due to syntax error in signals.py:
+- insert checkout_signals_error
+As per most of the errors and bugs with this project, the error was due to a missing character. You can see I was missing a closing parenthesis in my definition **def update_on_save(sender, instance, **kwargs)**** This syntax fixed meant my app starting properly in the console. 
+
+However, even though the app started, I was met with a **ModuleNotFoundError** which suggested to me there was an issue in the project level "settings.py"": 
+- insert image of modulenotfound error
+
+Another error after fixing the previous was met when trying to render the checkout page:
+- insert order form error
+After reassessing my "checkout/views.py" code, it transpired that I forgot to import **OrderForm** from the **forms.py** model. 
+
+The final error I was met with before the checkout page was rendered correctly was this:
+- insert reverse error
+My first thought was to locate the file causing the error. As I was trying to render the checkout page, I started in **checkout.html**. In the file I page searched for the missing view **product_view** and found the syntax that was causing the issue. Upon a furhter look in the "products" app, I realised the view needing to be used as the link was actually named **product_details** and not the **product_detail** url I had in the checkout.html file. Once I changed this and saved, the checkout page finally rendered.
 
 ## Bugs
 Encountered my first bug when building the homepage template. Everything appeared on screen as expted, with the search fucntion returning "q='search input'" signalling success but the dropdown functionality wasn't present. 
