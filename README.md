@@ -140,6 +140,9 @@ Found the bag and increment buttons the hardest part of the project this far. Fo
 The first stage in creating the checkout section for the site was building the backend so that orders placed, initialise an order in the admin section. After successfully creating the app, models and admin.py, the intended section on the admin backend was rendered with the correct model fields and product info.
 - insert image of order back end
 
+After some bugs and error tweaks, my checkout page displaying all the correct information, forms and content:
+- insert checkout_page_success
+
 ## HTML CSS and Python validation checks
 
 ### HTML
@@ -256,6 +259,10 @@ Faced a very difficult bug when trying to render the nicotine level in the shopp
 Found another bug with the shopping bag where it wasn't displaying the amount selected on the individual product page. 
 - insert bag total bug
 Fix was inside the "contexts.py" file. 'Quantity' was being filled in the dictionary from "item_data" which was from the outer for loop but instead, I needed the quantity to just be the quantity from the inner for loop.
+
+In my checkout page, everything rendered as expected apart from the individual item images, subtotal and grand_total:
+- insert image of checkout page 
+The bug was due to an issue with my "div" content. All the content, including product image, subtotal, details etc, needed to be enclosed in <div class="col-12 col-lg-6 order-lg-last mb-5">, insted only the content showing correctly eg. the subtotal header, was enclosed in this div. Corrected the issue and now all the information is displayed in the right format.
 
 
 
