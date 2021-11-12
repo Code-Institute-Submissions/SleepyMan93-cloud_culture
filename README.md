@@ -105,6 +105,14 @@ Process of setting up views with Django and Python:
 * Once the path has been created in the 'home' **urls.py** file, a path to the shell is needed inside the project level **urls.py** file
 * The last thing to do is add the 'home' app into **settings.py** and wire up the template directories (root and the custome allauth)
 
+### **Creating Models**
+Process of creating models for Python apps to work:
+* Create the intended app with **python3 manage.py 'app_name' startapp**
+* Inside the app, locate **models.py** to start building the models
+* Depending on the scope and how developed the entire project is, one needs to make sure to import all the neccessary settings and other models needed from the project scope.
+For instance, importing the project level configurations with **from django.conf import settings** and in the case of this project, importing **projects.model** into the "checkout app" so that we can use Product information such as price, quantity etc in the checkout models.
+* Once all the neccessary models have been initialised, we need to migrate the changes into the project directory. Using **python3 manage.py makemigrations --dry-run**, we can see what operations are set to be migrated, if all looks well, one can makemigrations and then migrate the new models into the project. 
+
 ## Life Cycle
 Upon setting up my Django environment and establising allauth is functional, the first step was to copy accross the allauth templates into my directory for customisation.
 Inside the 'templates' folder is where these and my other frontend templates are stored. 
