@@ -227,6 +227,13 @@ The final error I was met with before the checkout page was rendered correctly w
 - insert reverse error
 My first thought was to locate the file causing the error. As I was trying to render the checkout page, I started in **checkout.html**. In the file I page searched for the missing view **product_view** and found the syntax that was causing the issue. Upon a furhter look in the "products" app, I realised the view needing to be used as the link was actually named **product_details** and not the **product_detail** url I had in the checkout.html file. Once I changed this and saved, the checkout page finally rendered.
 
+Stripe payments and environment variables were all set up smoothly. I ran into my first error with this section when trying to render the "checkout_success" page:
+- insert check out succes page
+In keepting with most of my errors, the problem was due to the key not being in the checkout model dictionary. By putting an underscore in 'streetaddress1' like so 'street_address1', this corrected the issue but I was met with another error:
+- insert Type Error Args
+This problem took a lot of working out. For some reason my 'peritem_total' which is supposed to be a decimal field was rendering as a string and causing the issue. From commenting out the order_form section of my checkout view, I was able to get the **checkout_success** page to render, as was the success message with the UUID. After a long time and some help from a tutor, we were able to determine the problem. The "Sum" built in method being called had a lower case 's' which was causing all the issues. Once edited, everything worked as expected and the order form saving correctly to the admin panel. 
+
+
 ## Bugs
 Encountered my first bug when building the homepage template. Everything appeared on screen as expted, with the search fucntion returning "q='search input'" signalling success but the dropdown functionality wasn't present. 
 - insert photo dropdown_bug

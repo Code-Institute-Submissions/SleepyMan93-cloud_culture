@@ -11,10 +11,11 @@ def update_on_save(sender, instance, created, **kwargs):
     instance.order.update_total()
 
 @receiver(post_delete, sender=OrderPerItem)
-def update_on_save(sender, instance, **kwargs):
+def update_on_delete(sender, instance, **kwargs):
     """
     Update order total on peritem delete
     """
+    print('delete signal recieved!')
     instance.order.update_total()
 
 

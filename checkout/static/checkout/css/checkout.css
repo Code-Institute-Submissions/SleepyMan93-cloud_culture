@@ -39,3 +39,7 @@
     color: #000;
     border: 1px solid #000;
 }
+
+.christmas-btn {
+  justify-content: space-around;
+}
