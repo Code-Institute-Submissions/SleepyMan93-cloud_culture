@@ -51,23 +51,23 @@ With a recent influx in vaping culture, especially over in the US, I decided to 
 ## User Stories
 The target audience for this will be predominantly 18-50. Vaping in the UK is not illegal under the age of 18 but it is however illegal to sell to anyone under the age of 18.
 ## As an Unregistered User I want to:
-* be able to browse through all the products and blog posts
-* have the ability to add items to my bag
-* be able to remove, ammend and update the bag
-* be able to contact the site
+* Be able to browse through all the products and blog posts
+* Have the ability to add items to my bag
+* Be able to remove, ammend and update the bag
+* Be able to contact the site
 
 ## As a Registered User I want to:
-* be able to fast checkout seeing as my details will already be stored/saved
-* access my basic account details
-* have the ability to make blog posts as my username
-* have the ability to log in with my details
-* be able to update my shipping and billing details
-* be able to contact the site regarding an order
+* Be able to fast checkout seeing as my details will already be stored/saved
+* Access my basic account details
+* Have the ability to make blog posts as my username
+* Have the ability to log in with my details
+* Be able to update my shipping and billing details
+* Be able to contact the site regarding an order
 
 ## As the Site Owner I want to:
-* be able to log in to the Admin Panel
-* be able to add, update or remove products, without vistiting the admin panel
-* receive email notifications when a user submits through the contact page
+* Be able to log in to the Admin Panel
+* Be able to add, update or remove products, without vistiting the admin panel
+* Receive email notifications when a user submits through the contact page
 
 # Design Principles
 
@@ -75,10 +75,12 @@ The target audience for this will be predominantly 18-50. Vaping in the UK is no
 I wanted to create a site that reflects the name Cloud Culture but also the overall vape asthetic. To achieve this, my overall site will be based on white, which is a difference to my usual black/dark style. Hopefully this will make it feel more open and airy. 
 
 ## Fonts
+For my site font I decided to use a variation of Sans Serif called Rubik. I chose this font because it was professional enough but maintained a soft, rounded feel to match the shops products/ideals.
+[Rubik](https://fonts.google.com/specimen/Rubik#standard-styles)
    
 ## Icons
-
-## Layout
+I decided to use Font Awesome Icons again for this project.
+[Font Awesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2)
 
 # Sitemap / Wireframes
 
@@ -121,27 +123,27 @@ The next step was to create the 'home' app in which my 'index' and other fronten
 - Insert screen shot of We Are Working
 
 After setting up all my functionality, I could start to build the homepage. My first stage was to create a basic template using Bootstrap and some basic HTML. The process started by making a header for nav links, search bar and logo, the main banner image container and the basic 'Shop Now' button. Once all these components were working and in place, I linked my **base.css** style sheet to the **base.html** file and styled the content. Below is an image of the groundwork used to build the homepage:
-- insert image homepage_basic
+![Basic Homepage](media/readme/homepage_basic.png)
 
 The next process of my build was to create some "json" fixtures for my products and categpories to go. At first I was slightly confused how to make these from scratch but after making my mentor Gerry explained the "many to one" and "one to many" theory with database structure, the schema made sense which in turn, helped build the models and fixtures. After making the initial 7 categories, I tried adding my products via the admin panel on the site. Unfortuantely, only the images uplaoded transferred into the project directory, the "json" file was not updated with product information. From here, I manually built the product fixture and input, two sets of item data to test it was pulling through. Following the cmd "python3 manage.py loaddata products", on the products page I was met with two product query sets as text, which indicated success, see image below:
-- insert image of query set product page
+![Query Set Info](media/readme/query_set_success.png)
 
 Once I knew the product query sets were loading, I could move on to creating the products in the "products.json" and render the fixtures on to the "all_products" template page. Bar the uncentered line, everything pulled through well from the backend and all the product images, price and other information were displayed on the page as should be:
-- insert image of all products page
+![All Products Page](media/readme/all_products_stage.png)
 
 After this I focused on the shopping bag functionality. Once the views, template and urls were developed, I aimed to test the **add_to_bag** function as a print request to the terminal. After a few bug corrections, I was able to add a few products to the bag and have their **PK** show up with the amount ordered in the terminal. See below:
-- insert shopping bag success
+![Shopping Bag Success](media/readme/shopping_bag_success.png)
 
 Made some slight structural changes to my categories. The liquid is now categorised by flavour rather than "Vape_liquid". Hoping this will help with user experience and overall use of the site.
 
 Found the bag and increment buttons the hardest part of the project this far. For some reason, I ran into an incredible amount of bugs that needed me to revert back to older commits beacuse the code got too messy. The button would work but for some reaon, on the single product page, pressing "+" would add that item to the bag and vice versa for the "-". Starting from the beginning, I started with making the buttons on this page increase/decrease the item amount first. For this section, I had to mimic quite closely the code from the mini "Boutique Ado" project to get it working. By starting from foundation, I was able to get the shopping bag page fully functional and able to move onto the next stage:
-- insert shopping bag template
+![Shopping Bag Template](media/readme/shopping_bag_template.png)
 
 The first stage in creating the checkout section for the site was building the backend so that orders placed, initialise an order in the admin section. After successfully creating the app, models and admin.py, the intended section on the admin backend was rendered with the correct model fields and product info.
-- insert image of order back end
+![Order Admin](media/readme/order_admin.png)
 
 After some bugs and error tweaks, my checkout page displaying all the correct information, forms and content:
-- insert checkout_page_success
+![Basic Homepage](media/readme/checkout_page_success.png)
 
 ## HTML CSS and Python validation checks
 
@@ -163,11 +165,11 @@ After some bugs and error tweaks, my checkout page displaying all the correct in
 
 ✔️ Try loading an unrecognised link page: A 404 error page appears sending the user back to the homepage.
 
-✔️ Submit registration form with a user/email that already exists in database: User is prevented from signingin. A flash message is produced stating the username already exists.
+✔️ Submit registration form with a user/email that already exists in database: User is prevented from signingin.
 
 ✔️ Submit registration form with one of the fields not filled in: An error message appears asking user to fill in the field.
 
-✔️ Submit registration form with a new user/email that doesn't exist in database: Successfully sends user data to MongoDB and redirects user to the Home page. 
+✔️ Submit registration form with a new user/email that doesn't exist in database: Successfully adds user data to Admin Django back end and redirects user to the Home page. 
 
 ✔️ Submit Log In form if no username exists in database that matches entered username: Error message appears stating incorrect username and/or password.
 
@@ -181,7 +183,7 @@ After some bugs and error tweaks, my checkout page displaying all the correct in
 
 ✔️ Try adding a post when logged in: Successfully creates a post and redirects user to their Profile page only if all the fields are filled in correctly. 
 
-✔️ Try editing a post on the My Account page: Successfully renders in original game information, updates post and renders the new information on the edit page only if all the fields are filled in correctly. If not, an error message appears.
+✔️ Try editing a review on the My Account page: 
 
 ✔️ Try deleting a post while on the Profile page: User successfully deletes post and is taken back to their profile with the post removed
 
@@ -195,80 +197,70 @@ After some bugs and error tweaks, my checkout page displaying all the correct in
 
 ## Errors
 After initialising my **index.html** file and adding the installed view/app, I was met with a 'TemplateDoesNotExist' page. The server started correctly but the path I made seemed to cause the error:
-- photo of error page
+![Missing Template](media/readme/template_does_not_exist.png)
    To resolve the issue, I understood the error was not arising from the Python App View or code because the server ran with no issue. The problem lied within my filepath. The **index.html** file was not in the 'templates/home' folder but actually just inside 'templates'. The filepath should be **app_name > templates > app_name > index.html**
 
 Found an error with my filter query functionality. The 'mods' category was correctly displaying all items in category pk1 / mods but none of the other categories displayed their products correctly. By deleting all the product urls but copying the mods syntax because I knew this one was rendering correctly, I was able to resolve the issue. I pasted "{% url 'products' %}?category=mods" back into the anchor href, reloaded the page and the **mods** product page was rendering correctly. Then by pasting in this syntax to the other anchor links, just changing the category name, I was able to determine that the "accessory" page was the only one not working. I left this out from the "All Products" query and this page now loaded successfully with all the "Mod" and "Disposbale" vape products.
 
 The same error occurred when trying to load products in the 'new_arrivals' category. I decided to move on and assess the situation later which actually provided me with the solution. After creating the "request.GET" method for **sorting** and created a category link for every product, I noticed that what should have been products in 'accessories' and 'new_arrivals' were showing old category names as shown below. 
-- Insert photo of wrong category names
-This signaled to me, the **categories.json** file had not been loaded into the database with the new category names. Once loaded, the category pages rendered with the correct products. 
+![Wrong Category Name](media/readme/wrong_category_name.png)
+   This signaled to me, the **categories.json** file had not been loaded into the database with the new category names. Once loaded, the category pages rendered with the correct products. 
 
 When creating a pathfile in **setting.py** for my static folder, the "STATICFILES_DIR" produced this error:
-- insert static_dir_error
-To rectify the issue, as per the error message, I made the "STATICFILES_DIR" os.path into a tuple with this syntax | **STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)**
+![Static Dir Error](media/readme/static_dir_error.png)
+   To rectify the issue, as per the error message, I made the "STATICFILES_DIR" os.path into a tuple with this syntax | **STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)**
 
 Found a 'NameError' when trying to create some reaction messages for users interacting with the site:
-- insert success message bug
-The error was coming from the **pk** not being indicated with the item_id, my syntax was "Product.objects.get(pk=item)" when instead it should be "pk=item_id".  
+![Success Message Error](media/readme/success_message_bug.png)
+   The error was coming from the **pk** not being indicated with the item_id, my syntax was "Product.objects.get(pk=item)" when instead it should be "pk=item_id".  
 
 Encountered an error when trying to launch my new checkout app. The backend logic was all stable as the admin panel rendered as expected. The issue came when trying to inject the signals into the frontend. From the terminal, according to the message, the site app wouldn't start due to syntax error in signals.py:
-- insert checkout_signals_error
-As per most of the errors and bugs with this project, the error was due to a missing character. You can see I was missing a closing parenthesis in my definition **def update_on_save(sender, instance, **kwargs)**** This syntax fixed meant my app starting properly in the console. 
+![Checkout Signals Error](media/readme/checkout_signals_error.png)
+   As per most of the errors and bugs with this project, the error was due to a missing character. You can see I was missing a closing parenthesis in my definition **def update_on_save(sender, instance, **kwargs)**** This syntax fixed meant my app starting properly in the console. 
 
-However, even though the app started, I was met with a **ModuleNotFoundError** which suggested to me there was an issue in the project level "settings.py"": 
-- insert image of modulenotfound error
-
-Another error after fixing the previous was met when trying to render the checkout page:
-- insert order form error
+However, even though the app started, I was met with a **ModuleNotFoundError** which suggested to me there was an issue in the project level "settings.py"". Another error after fixing the previous was met when trying to render the checkout page:
+![Order Form Error](media/readme/order_form_error.png)
 After reassessing my "checkout/views.py" code, it transpired that I forgot to import **OrderForm** from the **forms.py** model. 
 
 The final error I was met with before the checkout page was rendered correctly was this:
-- insert reverse error
-My first thought was to locate the file causing the error. As I was trying to render the checkout page, I started in **checkout.html**. In the file I page searched for the missing view **product_view** and found the syntax that was causing the issue. Upon a furhter look in the "products" app, I realised the view needing to be used as the link was actually named **product_details** and not the **product_detail** url I had in the checkout.html file. Once I changed this and saved, the checkout page finally rendered.
+![Reverse Error](media/readme/no_reverse_error.png)
+   My first thought was to locate the file causing the error. As I was trying to render the checkout page, I started in **checkout.html**. In the file I page searched for the missing view **product_view** and found the syntax that was causing the issue. Upon a furhter look in the "products" app, I realised the view needing to be used as the link was actually named **product_details** and not the **product_detail** url I had in the checkout.html file. Once I changed this and saved, the checkout page finally rendered.
 
 Stripe payments and environment variables were all set up smoothly. I ran into my first error with this section when trying to render the "checkout_success" page:
-- insert check out succes page
+![Checkout Success Error](media/readme/checkout_success_error.png)
 In keepting with most of my errors, the problem was due to the key not being in the checkout model dictionary. By putting an underscore in 'streetaddress1' like so 'street_address1', this corrected the issue but I was met with another error:
-- insert Type Error Args
-This problem took a lot of working out. For some reason my 'peritem_total' which is supposed to be a decimal field was rendering as a string and causing the issue. From commenting out the order_form section of my checkout view, I was able to get the **checkout_success** page to render, as was the success message with the UUID. After a long time and some help from a tutor, we were able to determine the problem. The "Sum" built in method being called had a lower case 's' which was causing all the issues. Once edited, everything worked as expected and the order form saving correctly to the admin panel. 
+![Type Error Args](media/readme/type_error_args.png)
+   This problem took a lot of working out. For some reason my 'peritem_total' which is supposed to be a decimal field was rendering as a string and causing the issue. From commenting out the order_form section of my checkout view, I was able to get the **checkout_success** page to render, as was the success message with the UUID. After a long time and some help from a tutor, we were able to determine the problem. The "Sum" built in method being called had a lower case 's' which was causing all the issues. Once edited, everything worked as expected and the order form saving correctly to the admin panel. 
 
 
 ## Bugs
 Encountered my first bug when building the homepage template. Everything appeared on screen as expted, with the search fucntion returning "q='search input'" signalling success but the dropdown functionality wasn't present. 
-- insert photo dropdown_bug
-The bug fix was due to JS and using Bootstrap 4 classes when I installed Bootstrap 5 with this project. To correct the issue, in Bootstrap 5, the "data-toggle" class has now been changed to "data-bs-toggle", the dropdown functionality is now working. 
+![Photo Dropdown Bug](media/readme/dropdown_bug.png)
+   The bug fix was due to JS and using Bootstrap 4 classes when I installed Bootstrap 5 with this project. To correct the issue, in Bootstrap 5, the "data-toggle" class has now been changed to "data-bs-toggle", the dropdown functionality is now working. 
 
 When testing the responivness of my current elements, mainly the navbar section, I found two scaling issues. Using 'includes' I made a seperate HTML file for the navbar on mobile, essentially collapsing the content into icons. Using **d-block** and **d-lg-none**, the idea was to use template literals and inject the seperate HTML file after the standard navbar and for it to only show on small sizes and below. However, the ul was still showing as block, pushing the main-nav links right of center. Also when using dev tools, the icon and content appeared on a seperate line from the main-nav expandable dropdown. The image below demonstrates this:
 - insert responsive-bug image
 
-Found an issue when first rendering the "all products" page. As you can see from the image, the parent div has a class of "text-center" which should include line breaks. However, even with this class the line break wouldn't center under the page title: 
-- insert screen shot of off center hr rule
-
 Encountered a bug when trying to render an individual product page. I was met with a NameError, I believe to be originating from the product.views file:
-- insert screen shot single_product_bug
-The bug fix was found on line 24 as the error suggested. As I used the "all_products" view as the shell for the "product_details" view, I forgot to remove the s from the line "product = get_object_or_404(Product, pk=product_id)" meaning **'product': product,** could not be defined.
+![Single Product Bug](media/readme/single_product_bug.png)
+   The bug fix was found on line 24 as the error suggested. As I used the "all_products" view as the shell for the "product_details" view, I forgot to remove the s from the line "product = get_object_or_404(Product, pk=product_id)" meaning **'product': product,** could not be defined.
 
 When testing my Javascript for the sorting box method, I found a bug trying to sort the products by 'Name A-Z / Z-A'. The issue was found in **view.py** on line 24, stating that "Lower" had not been defined.. see below:
-- Insert Lower bug
-After reassessing my code, it appeared that I hadn't imported the "Lower" function needed for the if statement to work. Once imported, the category dropdown selection works.
+![Basic Homepage](media/readme/lower_bug.png)
+   After reassessing my code, it appeared that I hadn't imported the "Lower" function needed for the if statement to work. Once imported, the category dropdown selection works.
 
 Found a bug when making the shopping bag page. The page a view successfully load but for some reason only the "keep shopping" with chevron is the only content that appears on the page:
-- insert shopping bag bug
-The issue was due to the bag content not displaying under the header content. It took me a while to work out the issue but in the end, I used the **products.html** template as the base because this content was displaying correctly. In the end, the bug was due to the content being inside the "overlay" div. Once placed underneath, the content displayed as should.
+![Shopping Bag Bug](media/readme/shopping_bag_bug.png)
+   The issue was due to the bag content not displaying under the header content. It took me a while to work out the issue but in the end, I used the **products.html** template as the base because this content was displaying correctly. In the end, the bug was due to the content being inside the "overlay" div. Once placed underneath, the content displayed as should.
 
 Encountered another bug with the shopping bag but this time with the functionality. When I tried to add an item to the shopping bag, I was met with a TypeError stating "item_id" was an unexpected keyword argument:
-- insert shopping_update_bug
+![Shopping Updte Bug](media/readme/shopping_update_bug.png)
 As the indicated, the problem was coming from the bag view. I forgot to define item_id as an argument in the "add_to_bag" function. 
 
 Faced a very difficult bug when trying to render the nicotine level in the shopping bag. At first, the view wasn't creating a new item for the same product but with a different nicotine level, this was due to a typo in the bag **views.py**. However, the nicotine level wasn't rendering in the shopping bag, it showed N/A. To make sure there was a value, I placed **{{ item.product.has_nicotine }}** under the for loop to check if the item returned "True", once it had, I knew the nic level was storing in the dictionary. From here, I replaced it with **{{ item.nicotine }}**, which rendered the correct nicotine level. From here, I injected this logic back into the "if" bag statement and the nicotine level is now showing as expected.
 
-Found another bug with the shopping bag where it wasn't displaying the amount selected on the individual product page. 
-- insert bag total bug
-Fix was inside the "contexts.py" file. 'Quantity' was being filled in the dictionary from "item_data" which was from the outer for loop but instead, I needed the quantity to just be the quantity from the inner for loop.
-
 In my checkout page, everything rendered as expected apart from the individual item images, subtotal and grand_total:
-- insert image of checkout page 
+![Checkout Bug](media/readme/checkout_bug.png)
 The bug was due to an issue with my "div" content. All the content, including product image, subtotal, details etc, needed to be enclosed in <div class="col-12 col-lg-6 order-lg-last mb-5">, insted only the content showing correctly eg. the subtotal header, was enclosed in this div. Corrected the issue and now all the information is displayed in the right format.
 
 
@@ -276,16 +268,16 @@ The bug was due to an issue with my "div" content. All the content, including pr
 # Technologies Used <a name="languages"></a>
 
 1. [jQuery](https://jquery.com/)
-2. [Materialize](https://https://materializecss.com/)
+2. [Bootstrap5](https://getbootstrap.com/)
 3. [CSS 4](https://www.w3schools.com/w3css/)
 5. [HTML 5](https://en.wikipedia.org/wiki/HTML5)
 6. [JavaScript](https://www.javascript.com/)
 7. [Dev Tools](http://ami.responsivedesign.is/)
 8. [jQuery](https://jquery.com/)
 9. [Python](https://www.python.org/)
-10. [MongoDB](https://www.mongodb.com/)
+10. [Django](https://www.djangoproject.com/)
 11. [Heroku](https://heroku.com)
-12. [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+12. [Stripe](https://stripe.com)
 
 # Project Deployment <a name="deployment"></a>
 ## Process of deployment
