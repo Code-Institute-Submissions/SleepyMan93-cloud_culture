@@ -143,7 +143,7 @@ The first stage in creating the checkout section for the site was building the b
 ![Order Admin](media/readme/order_admin.png)
 
 After some bugs and error tweaks, my checkout page displaying all the correct information, forms and content:
-![Basic Homepage](media/readme/checkout_page_success.png)
+![Checkout Page Success](media/readme/checkout_page_success.png)
 
 ## HTML CSS and Python validation checks
 
@@ -262,6 +262,10 @@ Faced a very difficult bug when trying to render the nicotine level in the shopp
 In my checkout page, everything rendered as expected apart from the individual item images, subtotal and grand_total:
 ![Checkout Bug](media/readme/checkout_bug.png)
 The bug was due to an issue with my "div" content. All the content, including product image, subtotal, details etc, needed to be enclosed in <div class="col-12 col-lg-6 order-lg-last mb-5">, insted only the content showing correctly eg. the subtotal header, was enclosed in this div. Corrected the issue and now all the information is displayed in the right format.
+
+Found a visual bug when adding the full name field to the profile form:
+- insert image of fullname_bug
+The bug was due to an error in my profiles model. For the 'default.full_name' input, I assigned it as a TextField which produced a big and unnecessary text box for the name input. Amended it to CharField and this resolved the bug.
 
 
 

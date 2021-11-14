@@ -54,9 +54,10 @@
                                                 {% for item in order.peritems.all %} 
                                                 <li class="small">
                                                     {% if item.product.has_nicotine %}
-                                                        Nicotine {{ item.product.size|upper }}
+                                                        Nicotine {{ item.product.nicotine }}
                                                     {% endif %}{{ item.product.name }} x{{ item.quantity }}
                                                 </li>
+                                                {% endfor %}
                                             </ul>
                                         </td>
                                         <td>£{{ order.grand_total }}</td>
