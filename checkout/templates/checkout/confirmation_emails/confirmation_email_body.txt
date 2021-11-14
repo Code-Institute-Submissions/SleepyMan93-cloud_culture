@@ -1,0 +1,18 @@
+Hello {{ order.full_name }},
+
+Thanks so much for making an order with us. Your order information is below:
+
+Order Number: {{ order.order_number }}
+
+Order Total: {{ order.order_total }}
+Products: {{ order.products }}
+
+Your order will be shipped to:
+ {{ order.street_address1 }} 
+ {{ order.postal_code }}
+ {{ order.town_or_city }}
+
+If you have any questions or issue with the product(s), please don't hesitate to get in touch at {{ contact.email }}.
+
+Safe Puffin.
+Cloud Culture
