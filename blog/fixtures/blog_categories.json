@@ -1,0 +1,26 @@
+[
+    {
+        "pk": 1, 
+        "model": "blog.category", 
+        "fields": {
+            "name": "health", 
+            "friendly_name": "Health",
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "blog.category", 
+        "fields": {
+            "name": "new_technology", 
+            "friendly_name": "New Technology"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "blog.category", 
+        "fields": {
+            "name": "information", 
+            "friendly_name": "Information"
+        }
+    }
+]

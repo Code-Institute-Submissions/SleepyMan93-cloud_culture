@@ -1,0 +1,38 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block extra_css %} 
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock %}
+
+
+{% block page_header %} 
+    <div class="containter header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %} 
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            {% for blog in blog %}
+            <div class="col blog-hero-container">
+                {% if blog.image %}
+                    <a href="">
+                        <img class="blog-hero-image img-fluid" src="{{ blog.image.url }}" alt="{{ blog.title }}">
+                    </a>
+                {% else %}
+                    <a href="">
+                        <img class="blog-hero-image img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ blog.title }}">
+                    </a>
+                {% endif %}
+                <div class="blog-hero-overlay"></div>
+                <hr class="w-100 mb-1">
+            {% endfor %} 
+            </div>
+        </div>
+    </div>
+{% endblock %}

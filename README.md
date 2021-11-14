@@ -145,6 +145,14 @@ The first stage in creating the checkout section for the site was building the b
 After some bugs and error tweaks, my checkout page displaying all the correct information, forms and content:
 ![Checkout Page Success](media/readme/checkout_page_success.png)
 
+The payment stage and order per user definitley took the most time to set up and working completely. I decided to focus on getting this finished before coming back to make my own Blog model. Eventually, everything was error free and completely working as you can see from the screen shots below:
+- checkout success image
+- user profile image
+- admin update / delete
+
+From here I was able to move on to my blog model. The first step was to create the app and model, create a few json fixtures for 3 blog categories, migrate the model changes and load the fixture. This was all successful with no issues as shown below:
+- insert image of blog admin
+
 ## HTML CSS and Python validation checks
 
 ### HTML
@@ -196,6 +204,9 @@ After some bugs and error tweaks, my checkout page displaying all the correct in
 # Bugs / De-Bugging / Syntax Issues<a name="bugs"></a>
 
 ## Errors
+
+### Homepage and nav
+
 After initialising my **index.html** file and adding the installed view/app, I was met with a 'TemplateDoesNotExist' page. The server started correctly but the path I made seemed to cause the error:
 ![Missing Template](media/readme/template_does_not_exist.png)
    To resolve the issue, I understood the error was not arising from the Python App View or code because the server ran with no issue. The problem lied within my filepath. The **index.html** file was not in the 'templates/home' folder but actually just inside 'templates'. The filepath should be **app_name > templates > app_name > index.html**
@@ -206,13 +217,11 @@ The same error occurred when trying to load products in the 'new_arrivals' categ
 ![Wrong Category Name](media/readme/wrong_category_name.png)
    This signaled to me, the **categories.json** file had not been loaded into the database with the new category names. Once loaded, the category pages rendered with the correct products. 
 
+### Settings 
+
 When creating a pathfile in **setting.py** for my static folder, the "STATICFILES_DIR" produced this error:
 ![Static Dir Error](media/readme/static_dir_error.png)
    To rectify the issue, as per the error message, I made the "STATICFILES_DIR" os.path into a tuple with this syntax | **STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)**
-
-Found a 'NameError' when trying to create some reaction messages for users interacting with the site:
-![Success Message Error](media/readme/success_message_bug.png)
-   The error was coming from the **pk** not being indicated with the item_id, my syntax was "Product.objects.get(pk=item)" when instead it should be "pk=item_id".  
 
 Encountered an error when trying to launch my new checkout app. The backend logic was all stable as the admin panel rendered as expected. The issue came when trying to inject the signals into the frontend. From the terminal, according to the message, the site app wouldn't start due to syntax error in signals.py:
 ![Checkout Signals Error](media/readme/checkout_signals_error.png)
@@ -221,6 +230,14 @@ Encountered an error when trying to launch my new checkout app. The backend logi
 However, even though the app started, I was met with a **ModuleNotFoundError** which suggested to me there was an issue in the project level "settings.py"". Another error after fixing the previous was met when trying to render the checkout page:
 ![Order Form Error](media/readme/order_form_error.png)
 After reassessing my "checkout/views.py" code, it transpired that I forgot to import **OrderForm** from the **forms.py** model. 
+
+### Render Issues
+
+Found a 'NameError' when trying to create some reaction messages for users interacting with the site:
+![Success Message Error](media/readme/success_message_bug.png)
+   The error was coming from the **pk** not being indicated with the item_id, my syntax was "Product.objects.get(pk=item)" when instead it should be "pk=item_id".  
+
+### Checkout
 
 The final error I was met with before the checkout page was rendered correctly was this:
 ![Reverse Error](media/readme/no_reverse_error.png)
@@ -234,6 +251,9 @@ In keepting with most of my errors, the problem was due to the key not being in 
 
 
 ## Bugs
+
+### Homepage
+
 Encountered my first bug when building the homepage template. Everything appeared on screen as expted, with the search fucntion returning "q='search input'" signalling success but the dropdown functionality wasn't present. 
 ![Photo Dropdown Bug](media/readme/dropdown_bug.png)
    The bug fix was due to JS and using Bootstrap 4 classes when I installed Bootstrap 5 with this project. To correct the issue, in Bootstrap 5, the "data-toggle" class has now been changed to "data-bs-toggle", the dropdown functionality is now working. 
@@ -241,13 +261,15 @@ Encountered my first bug when building the homepage template. Everything appeare
 When testing the responivness of my current elements, mainly the navbar section, I found two scaling issues. Using 'includes' I made a seperate HTML file for the navbar on mobile, essentially collapsing the content into icons. Using **d-block** and **d-lg-none**, the idea was to use template literals and inject the seperate HTML file after the standard navbar and for it to only show on small sizes and below. However, the ul was still showing as block, pushing the main-nav links right of center. Also when using dev tools, the icon and content appeared on a seperate line from the main-nav expandable dropdown. The image below demonstrates this:
 - insert responsive-bug image
 
+### Product Page
+
 Encountered a bug when trying to render an individual product page. I was met with a NameError, I believe to be originating from the product.views file:
 ![Single Product Bug](media/readme/single_product_bug.png)
    The bug fix was found on line 24 as the error suggested. As I used the "all_products" view as the shell for the "product_details" view, I forgot to remove the s from the line "product = get_object_or_404(Product, pk=product_id)" meaning **'product': product,** could not be defined.
 
-When testing my Javascript for the sorting box method, I found a bug trying to sort the products by 'Name A-Z / Z-A'. The issue was found in **view.py** on line 24, stating that "Lower" had not been defined.. see below:
-![Basic Homepage](media/readme/lower_bug.png)
-   After reassessing my code, it appeared that I hadn't imported the "Lower" function needed for the if statement to work. Once imported, the category dropdown selection works.
+When testing my Javascript for the sorting box method, I found a bug trying to sort the products by 'Name A-Z / Z-A'. The issue was found in **view.py** on line 24, stating that "Lower" had not been defined.. After reassessing my code, it appeared that I hadn't imported the "Lower" function needed for the if statement to work. Once imported, the category dropdown selection works.
+
+### Shopping Bag
 
 Found a bug when making the shopping bag page. The page a view successfully load but for some reason only the "keep shopping" with chevron is the only content that appears on the page:
 ![Shopping Bag Bug](media/readme/shopping_bag_bug.png)
@@ -259,9 +281,13 @@ As the indicated, the problem was coming from the bag view. I forgot to define i
 
 Faced a very difficult bug when trying to render the nicotine level in the shopping bag. At first, the view wasn't creating a new item for the same product but with a different nicotine level, this was due to a typo in the bag **views.py**. However, the nicotine level wasn't rendering in the shopping bag, it showed N/A. To make sure there was a value, I placed **{{ item.product.has_nicotine }}** under the for loop to check if the item returned "True", once it had, I knew the nic level was storing in the dictionary. From here, I replaced it with **{{ item.nicotine }}**, which rendered the correct nicotine level. From here, I injected this logic back into the "if" bag statement and the nicotine level is now showing as expected.
 
+### Checkout Page
+
 In my checkout page, everything rendered as expected apart from the individual item images, subtotal and grand_total:
 ![Checkout Bug](media/readme/checkout_bug.png)
 The bug was due to an issue with my "div" content. All the content, including product image, subtotal, details etc, needed to be enclosed in <div class="col-12 col-lg-6 order-lg-last mb-5">, insted only the content showing correctly eg. the subtotal header, was enclosed in this div. Corrected the issue and now all the information is displayed in the right format.
+
+### Profile Page
 
 Found a visual bug when adding the full name field to the profile form:
 - insert image of fullname_bug

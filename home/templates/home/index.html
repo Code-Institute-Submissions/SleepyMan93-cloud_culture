@@ -12,15 +12,44 @@
 {% block content %} 
     <div class="container h-100">
         <div class="row h-100">
-            <div class="col-12 col-md-6 my-auto ">
-                <h1 class="display-4 logo-font text-white">
-                    Vape Nation
-                </h1>
+            <div class="col-12 text-center my-auto ">
                 <div>
                     <h4 class="my-5">
                         <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
                     </h4>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid h-100 homepage-content">
+        <div class="container">
+            <div class="row align-items-start gx-5 shopping-row">
+                <div class="col col-md-3 shopping-panels p-3 bg-grey">
+                    <h4 class="text-black fw-bold">Shop Juice</h4>
+                    <h6 class="text-black">What flavour are you?</h5>
+                    <a href="{% url 'products' %}?category=bannana,tropical,berry,apple,strawberry" class="shop-panel-button btn btn-sm rounded-0 text-uppercase py-3">Shop Now</a>
+                </div>
+                <div class="col col-md-3 shopping-panels p-3 bg-grey">
+                    <h4 class="text-black fw-bold">Shop Disposables</h4>
+                    <h6 class="text-black">A new way to vape</h5>
+                    <a href="{% url 'products' %}?category=disposable" class="shop-panel-button btn btn-sm rounded-0 text-uppercase py-3">Shop Now</a>
+                </div>
+                <div class="col col-md-3 shopping-panels p-3 bg-grey">
+                    <h4 class="text-black fw-bold">Shop Mods</h4>
+                    <h6 class="text-black">Old faithful</h5>
+                    <a href="{% url 'products' %}?category=mods" class="shop-panel-button btn btn-sm rounded-0 text-uppercase py-3">Shop Now</a>
+                </div>
+
+                <div class="row text-start sub-headers">
+                    <div class="col">
+                        <h1 class="text-black fw-bold">Blog</h1>
+                    </div>
+                </div>
+
+                <div class="col col-md-4 p3"></div>
+                <div class="col col-md-4 p3"></div>
+                <div class="col col-md-4 p3"></div>
+                <div class="col col-md-4 p3"></div>
             </div>
         </div>
     </div>
