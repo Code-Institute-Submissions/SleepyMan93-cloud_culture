@@ -1,0 +1,22 @@
+.profile-form-input .form-control {
+    color: #000;
+}
+
+.profile-form-input::placeholder {
+    color: #6c757d;
+}
+
+.form-group input,
+.form-group select,
+#profile-update-form button {
+    margin-top: .5rem;
+}
+
+#id_default_country,
+#id_default_country option:not(:first-child) {
+    color: #000;
+}
+
+#id_default_country option:first-child {
+    color: #6c757d;
+}
