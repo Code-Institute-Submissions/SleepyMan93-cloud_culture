@@ -96,7 +96,7 @@ def product_details(request, product_id):
         'review_form': review_form
     }
 
-    return render(request, 'products/product_detail.html', context)
+    return render(request, 'products/product_details.html', context)
 
 @login_required
 def edit_review(request, review_id):
@@ -107,7 +107,7 @@ def edit_review(request, review_id):
             if review_form.is_valid():
                 review_form.save()
                 messages.success(
-                    request, 'You have successfully updated your Review')
+                    request, 'Thanks. You have successfully updated your Review')
                 return redirect(reverse('product_detail'))
             else:
                 messages.error(request, 'Error! \
@@ -124,7 +124,6 @@ def edit_review(request, review_id):
     context = {
         'review_form': review_form,
         'review': review,
-        'on_profile_page': True
     }
 
     return render(request, 'products/edit_review.html', context)

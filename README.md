@@ -22,7 +22,12 @@ Cloud Culture
    - App Functionality Testing
       * Setting up Django Environment
       * Python App Views
-      * Life Cycle
+   - Life Cycle
+      * Home Page
+      * Products
+      * Bag
+      * Checkout
+      * Models
    - HTML, CSS and Python checks
       * HTML
       * CSS
@@ -32,6 +37,8 @@ Cloud Culture
    - Automatic Testing
 3. [Mongo Databse](#mongodb)
 4. [Bugs / De-bugging / Syntax Issues](#bugs)
+   - Errors
+   - Bugs
 5. [Technologies Used](#languages)
    - Languages Utilised
    - Online Material
@@ -116,6 +123,8 @@ For instance, importing the project level configurations with **from django.conf
 * Once all the neccessary models have been initialised, we need to migrate the changes into the project directory. Using **python3 manage.py makemigrations --dry-run**, we can see what operations are set to be migrated, if all looks well, one can makemigrations and then migrate the new models into the project. 
 
 ## Life Cycle
+
+### Home Page
 Upon setting up my Django environment and establising allauth is functional, the first step was to copy accross the allauth templates into my directory for customisation.
 Inside the 'templates' folder is where these and my other frontend templates are stored. 
 
@@ -125,11 +134,15 @@ The next step was to create the 'home' app in which my 'index' and other fronten
 After setting up all my functionality, I could start to build the homepage. My first stage was to create a basic template using Bootstrap and some basic HTML. The process started by making a header for nav links, search bar and logo, the main banner image container and the basic 'Shop Now' button. Once all these components were working and in place, I linked my **base.css** style sheet to the **base.html** file and styled the content. Below is an image of the groundwork used to build the homepage:
 ![Basic Homepage](media/readme/homepage_basic.png)
 
+### Products
+
 The next process of my build was to create some "json" fixtures for my products and categpories to go. At first I was slightly confused how to make these from scratch but after making my mentor Gerry explained the "many to one" and "one to many" theory with database structure, the schema made sense which in turn, helped build the models and fixtures. After making the initial 7 categories, I tried adding my products via the admin panel on the site. Unfortuantely, only the images uplaoded transferred into the project directory, the "json" file was not updated with product information. From here, I manually built the product fixture and input, two sets of item data to test it was pulling through. Following the cmd "python3 manage.py loaddata products", on the products page I was met with two product query sets as text, which indicated success, see image below:
 ![Query Set Info](media/readme/query_set_success.png)
 
 Once I knew the product query sets were loading, I could move on to creating the products in the "products.json" and render the fixtures on to the "all_products" template page. Bar the uncentered line, everything pulled through well from the backend and all the product images, price and other information were displayed on the page as should be:
 ![All Products Page](media/readme/all_products_stage.png)
+
+### Shopping Bag
 
 After this I focused on the shopping bag functionality. Once the views, template and urls were developed, I aimed to test the **add_to_bag** function as a print request to the terminal. After a few bug corrections, I was able to add a few products to the bag and have their **PK** show up with the amount ordered in the terminal. See below:
 ![Shopping Bag Success](media/readme/shopping_bag_success.png)
@@ -138,6 +151,8 @@ Made some slight structural changes to my categories. The liquid is now categori
 
 Found the bag and increment buttons the hardest part of the project this far. For some reason, I ran into an incredible amount of bugs that needed me to revert back to older commits beacuse the code got too messy. The button would work but for some reaon, on the single product page, pressing "+" would add that item to the bag and vice versa for the "-". Starting from the beginning, I started with making the buttons on this page increase/decrease the item amount first. For this section, I had to mimic quite closely the code from the mini "Boutique Ado" project to get it working. By starting from foundation, I was able to get the shopping bag page fully functional and able to move onto the next stage:
 ![Shopping Bag Template](media/readme/shopping_bag_template.png)
+
+### Checkout
 
 The first stage in creating the checkout section for the site was building the backend so that orders placed, initialise an order in the admin section. After successfully creating the app, models and admin.py, the intended section on the admin backend was rendered with the correct model fields and product info.
 ![Order Admin](media/readme/order_admin.png)
@@ -150,8 +165,18 @@ The payment stage and order per user definitley took the most time to set up and
 - user profile image
 - admin update / delete
 
-From here I was able to move on to my blog model. The first step was to create the app and model, create a few json fixtures for 3 blog categories, migrate the model changes and load the fixture. This was all successful with no issues as shown below:
+### Models
+
+From here I was able to move on to my blog and review models. The first step was to create the app and model, create a few json fixtures for 3 blog categories, migrate the model changes and load the fixture. This was all successful with no issues as shown below:
 - insert image of blog admin
+
+Next I moved on to create the review model, form and views inside the products app. Using features already established using the main site, my thought process was to build a basic model and use the User model in the products view to build a review model using if statements to make sure the user was logged in or a super user:
+- insert image of review_view
+
+The rest of the forms and edit/delete views re-worked the product logic and implemented crispy forms with the fields provided to the user. After a few tweaks, the terminal presented no errors and I could migrate the model into the products app. Once migrated, I focused on rendering the basic model information into the **product_details.html**. After building the template, I knew the django templating logic was working because "No reviews yet" was rendering on every individual product page:
+- insert review_view_success
+
+
 
 ## HTML CSS and Python validation checks
 
@@ -185,15 +210,15 @@ From here I was able to move on to my blog model. The first step was to create t
 
 ✔️ Submit Log In form with one of the fields not filled in: An error message appears asking user to fill in the field.
 
-✔️ Submit log in form with correct username and password: Starts session and takes user to the Home page. 
+✔️ Submit log in form with correct username and password: Starts session and takes user to the profile page. 
 
-✔️ Press the Sign Out button when logged in: Ends the session and sends user back to login.html. 
+✔️ Press the Sign Out button when logged in: Ends the session and sends user back to login/create user page. 
 
-✔️ Try adding a post when logged in: Successfully creates a post and redirects user to their Profile page only if all the fields are filled in correctly. 
+✔️ Try adding a review when logged in: Successfully creates a review and redirects user to the Product Detail page with review added. 
 
-✔️ Try editing a review on the My Account page: 
+✔️ Try editing a review on the Product Detial page: 
 
-✔️ Try deleting a post while on the Profile page: User successfully deletes post and is taken back to their profile with the post removed
+✔️ Try deleting a review while on the Product Details page: User successfully deletes post and is taken back to the individual product page with the post removed
 
 ✔️ Search posts on site: If results found, post is rendered on the home page. If no results, message stating no results found and a return to home page button produced. 
 
@@ -248,6 +273,11 @@ Stripe payments and environment variables were all set up smoothly. I ran into m
 In keepting with most of my errors, the problem was due to the key not being in the checkout model dictionary. By putting an underscore in 'streetaddress1' like so 'street_address1', this corrected the issue but I was met with another error:
 ![Type Error Args](media/readme/type_error_args.png)
    This problem took a lot of working out. For some reason my 'peritem_total' which is supposed to be a decimal field was rendering as a string and causing the issue. From commenting out the order_form section of my checkout view, I was able to get the **checkout_success** page to render, as was the success message with the UUID. After a long time and some help from a tutor, we were able to determine the problem. The "Sum" built in method being called had a lower case 's' which was causing all the issues. Once edited, everything worked as expected and the order form saving correctly to the admin panel. 
+
+### Stripe
+
+Amongst a big heap of errors when setting up Stripe payments, mostly syntax issues, this JS error caused the most problems. It prevented webhooks being sent successfully to Stripe and therefore preventing order details and other hooks being sent to Stripe. After seeking help from the course tutors, who also had issues locating the problem, we managed to work out the Sum function was not being ran properly. Although it indicated a JS issue stating "Cannot set properties of null (setting 'textContent'), this part of the stripe_elements JS was present and supposed to fill with an error message. This caused the confusion as the error was actually originating from the "checkout.model", I retyped the sum model, making sure to capitilise the S and the Stripe payments begun to work.
+- insert stripe_js_error
 
 
 ## Bugs
