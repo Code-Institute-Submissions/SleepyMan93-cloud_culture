@@ -19,7 +19,7 @@
     <div class="container-fluid">
         <div class="row">
             {% for blog in blog %}
-            <div class="col blog-hero-container">
+            <div class="col">
                 {% if blog.image %}
                     <a href="">
                         <img class="blog-hero-image img-fluid" src="{{ blog.image.url }}" alt="{{ blog.title }}">
@@ -29,8 +29,6 @@
                         <img class="blog-hero-image img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ blog.title }}">
                     </a>
                 {% endif %}
-                <div class="blog-hero-overlay"></div>
-                <hr class="w-100 mb-1">
             {% endfor %} 
             </div>
         </div>
