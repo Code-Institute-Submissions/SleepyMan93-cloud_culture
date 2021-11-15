@@ -27,6 +27,15 @@ body {
     width: fit-content;
 }
 
+.main-logo-link img {
+    height: 5rem;
+    float: left;
+}
+
+.page-title {
+    margin-top: 5rem;
+}
+
 .homepage-content {
     background-color: #fff;
 }
@@ -73,6 +82,10 @@ body {
 .btn-black:focus {
     background: #0A090C;
     color: #F0EDEE;
+}
+
+a:hover {
+    color: #5A4AE3;
 }
 
 .text-black {
