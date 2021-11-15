@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Product, Category
-from .forms import ProductForm
+from .models import Product, Category, Review
+from .forms import ProductForm, ReviewForm
 
 # Create your views here.
 
@@ -62,15 +62,86 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 def product_details(request, product_id):
-    """ A view to return individual products, including details. A 404 error message if not the product """
+    """ 
+    A view to return individual products, including details. A 404 error message if not the product
+    and render review form for each product
+    """
 
     product = get_object_or_404(Product, pk=product_id)
+    reviews = product.reviews.filter()
+    new_review = None
+
+    if request.method == 'POST':
+        review_form = ReviewForm(data=request.POST)
+        if review_form.is_valid():
+            """ Create Review """
+            new_review = review_form.save(commit=False)
+            """ Assign user to review """
+            request.user = new_review.review_user
+            new_review.save()
+            """ Assign review to product """
+            product = new_review.product_id
+            new_review.save()
+
+            review_form = ReviewForm()
+
+            messages.success(request, 'Review successfully posted.')
+            return redirect(reverse('product_detail', args=[product.id]))
+    else:
+        review_form = ReviewForm()
 
     context = {
         'product': product,
+        'reviews': reviews,
+        'review_form': review_form
     }
 
-    return render(request, 'products/product_details.html', context)
+    return render(request, 'products/product_detail.html', context)
+
+@login_required
+def edit_review(request, review_id):
+    review = get_object_or_404(Review, pk=review_id)
+    if request.user == review.review_user or request.user.is_superuser:
+        if request.method == 'POST':
+            review_form = ReviewForm(request.POST, instance=review)
+            if review_form.is_valid():
+                review_form.save()
+                messages.success(
+                    request, 'You have successfully updated your Review')
+                return redirect(reverse('product_detail'))
+            else:
+                messages.error(request, 'Error! \
+                    Please check your form is valid.')
+        else:
+            review_form = ReviewForm(instance=review)
+            messages.info(request, f'Editing Review \
+                "{review.review_title}"')
+    else:
+        messages.error(request, (
+                f'Sorry only user {review.review_user} can edit this review.'))
+        return redirect(reverse('product_details'))
+
+    context = {
+        'review_form': review_form,
+        'review': review,
+        'on_profile_page': True
+    }
+
+    return render(request, 'products/edit_review.html', context)
+
+
+@login_required
+def delete_review(request, review_id):
+    review = get_object_or_404(Review, pk=review_id)
+    if request.user == review.review_user or request.user.is_superuser:
+        review.delete()
+        messages.success(request, 'Review Deleted')
+        return redirect(reverse('product_details'))
+    else:
+        messages.error(request, (
+            f'Sorry only {review.review_user} can delete this review'))
+        return redirect(reverse('products'))
+
 
 @login_required
 def add_product(request):
@@ -96,6 +167,7 @@ def add_product(request):
     }
 
     return render(request, template, context)
+
 
 @login_required
 def edit_product(request, product_id):
@@ -124,6 +196,7 @@ def edit_product(request, product_id):
     }
 
     return render(request, template, context)
+
 
 @login_required
 def delete_product(request, product_id):
