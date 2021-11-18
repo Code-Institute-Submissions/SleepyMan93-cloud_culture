@@ -19,7 +19,7 @@
             <div class="dropdown-menu border-0" aria-labelledby="vape-link">
                 <a href="{% url 'products' %}?category=mods" class="dropdown-item">Mods</a>
                 <a href="{% url 'products' %}?category=disposable" class="dropdown-item">Disposable</a>
-                <a href="{% url 'products' %}?category=accessories" class="dropdown-item">Accessories</a> <!-- Need to work out why the Accessories category isn't pulling products-->
+                <a href="{% url 'products' %}?category=accessories" class="dropdown-item">Accessories</a>
                 <a href="{% url 'products' %}?category=mods,disposable,accessories" class="dropdown-item">All Vapes</a>
             </div>
         </li>
@@ -39,14 +39,23 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font fw-bold nav-link text-black" href="#" id="specials-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font fw-bold nav-link text-black sub-menu" href="#" id="specials-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Special Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a> <!-- Need to work out why New Arrival products aren't working -->
+                <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a> 
                 <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
                 <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>
                 <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="dropdown-item">All Specials</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font fw-bold nav-link text-black" href="#" id="blog-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                The Blog
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
+                <a href="{% url 'blog' %}?category=health,new_technology,information" class="dropdown-item">Our Blog</a>
             </div>
         </li>
     </ul>

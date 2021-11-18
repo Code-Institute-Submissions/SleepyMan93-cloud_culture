@@ -196,6 +196,30 @@ input[name='q']::placeholder {
     background-color: #5A4AE3;
 }
 
+/* blog css */
+
+.blog-hero-image {
+    width: 100%;
+    object-fit: cover;
+    height: 300px;
+    z-index: 3;
+}
+
+.blog-hero-overlay {
+    background: rgba(0,0,0,.5);
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.blog-hero-image .wrapper {
+    margin: auto;
+}
+
+.blog-content {
+    text-overflow: ellipsis; 
+}
+
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
     width: 0; 
@@ -252,23 +276,6 @@ input[name='q']::placeholder {
 
 .form-group {
     margin-bottom: 0.8rem;
-}
-
-.blog-hero-image {
-    width: 100%;
-    object-fit: cover;
-    height: 600px;
-}
-
-.blog-hero-overlay {
-    background: rgba(0,0,0,.5);
-    height: 100%;
-    width: 100%;
-    display: flex;
-}
-
-.blog-hero-image .wrapper {
-    margin: auto;
 }
 
 /* -------------------------------- Media Queries */
