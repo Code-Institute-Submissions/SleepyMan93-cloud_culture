@@ -169,15 +169,21 @@ The payment stage and order per user definitley took the most time to set up and
 
 ### Models
 
+_Blog_
 From here I was able to move on to my blog / review and order enquiry models. The first step was to create the app and model, create a few json fixtures for 3 blog categories, migrate the model changes and load the fixture. This was all successful with no issues as shown below:
 - insert image of blog admin
+
 As this model foundation was in place, I decided to complete the review and order enquiry models as this was more key for the e-commerce product I've been building. The blog will be a future implementation.
 
+_Review_
 Next I moved on to create the review model, form and views inside the products app. Using features already established using the main site, my thought process was to build a basic model and use the User model in the products view to build a review model using if statements to make sure the user was logged in or a super user:
 - insert image of review_view
 
 The rest of the forms and edit/delete views re-worked the product logic and implemented crispy forms with the fields provided to the user. After a few tweaks, the terminal presented no errors and I could migrate the model into the products app. Once migrated, I focused on rendering the basic model information into the **product_details.html**. After building the template, I knew the django templating logic was working because "No reviews yet" was rendering on every individual product page:
 - insert review_view_success
+
+Ran into an error with the review section which meant the form was saving, this was validated with the information saving to the admin backend DB but the user and product_id were not storing with the POST. Eventually, I found the issue. My data being defined in the add review section for product_details view was reversed. I had the variable first and data input second. Worked out the issue by realising the form data being stored correctly was the opposite way.
+![Successful Review](media/readme/successful_review.png)
 
 
 
