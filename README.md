@@ -305,6 +305,9 @@ Encountered my first bug when building the homepage template. Everything appeare
 When testing the responivness of my current elements, mainly the navbar section, I found two scaling issues. Using 'includes' I made a seperate HTML file for the navbar on mobile, essentially collapsing the content into icons. Using **d-block** and **d-lg-none**, the idea was to use template literals and inject the seperate HTML file after the standard navbar and for it to only show on small sizes and below. However, the ul was still showing as block, pushing the main-nav links right of center. Also when using dev tools, the icon and content appeared on a seperate line from the main-nav expandable dropdown. The image below demonstrates this:
 - insert responsive-bug image
 
+Found a bug once site was deployed where by some images linked in the HTML did not render. 
+![Deployed Image Bug](media/readme/alt_image_bug.png)
+
 ### Product Page
 
 Encountered a bug when trying to render an individual product page. I was met with a NameError, I believe to be originating from the product.views file:
