@@ -73,6 +73,7 @@ def product_details(request, product_id):
     reviews = product.reviews.filter()
     new_review = None
     template = 'products/product_details.html'
+    print("product is:", product)
 
     if request.method == 'POST':
         review_form = ReviewForm(data=request.POST)
@@ -83,13 +84,13 @@ def product_details(request, product_id):
             request.user = new_review.review_user
             new_review.save()
             """ Assign review to product """
-            product = new_review.product_id
+            product_review = new_review.product_id
             new_review.save()
 
             review_form = ReviewForm()
 
             messages.success(request, 'Review successfully posted.')
-            return redirect(reverse('product_details', args=[product.id]))
+            return redirect(reverse('products'))
     else:
         review_form = ReviewForm()
 
