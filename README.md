@@ -5,6 +5,12 @@ Cloud Culture
 
 ![Project Displays](static/images/cover_photo.png)
 
+SUPERUSER LOGIN: testfinal@test.com
+SUPERUSER PASSWORD: 1t2r3e4w5q
+
+ADMIN LOGIN: new_admin
+ADMIN PASSWORD: 1t2r3e4w5q
+
 
 # Table of Contents 
 
@@ -341,8 +347,6 @@ Found a visual bug when adding the full name field to the profile form:
 ![Full Name Bug](media/readme/full_name_bug.png)
 The bug was due to an error in my profiles model. For the 'default.full_name' input, I assigned it as a TextField which produced a big and unnecessary text box for the name input. Amended it to CharField and this resolved the bug.
 
-
-
 # Technologies Used <a name="languages"></a>
 
 1. [jQuery](https://jquery.com/)
@@ -490,7 +494,7 @@ To connect Django to s3, you'll need to add some parameters in settings.py to te
       AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
       AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 - Go to Heroku, in the convig vars, add USE_AWS = True. Add the AWS access key and secret access key
-- Remove disable collectstatic from Heroku config vars
+- Remove DISABLE_COLLECTSTATIC=1 from Heroku config vars
 - Create a file called custom_storages.py, adding the following code:
 
 - In settings.py add the following statements to tell Django where the static files will come form in production:
