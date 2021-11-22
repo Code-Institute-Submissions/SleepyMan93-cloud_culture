@@ -1,0 +1,11 @@
+Calling all Cloud Culture Admins!
+
+The customer ({{ inquiry.name }}) has submitted an inquiry regarding their order {{ inquiry.order_number }}.
+Could someone please review the message and reply. Their contact email is below.
+
+{{ inquiry.message }}
+
+Customer: {{ inquiry.name }} 
+Contact Email: {{ inquiry.contact_email }}
+
+Have a great day.
