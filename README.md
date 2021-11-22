@@ -307,6 +307,7 @@ When testing the responivness of my current elements, mainly the navbar section,
 
 Found a bug once site was deployed where by some images linked in the HTML did not render. 
 ![Deployed Image Bug](media/readme/alt_image_bug.png)
+To correct this I just copied the Object URL for each image and used that as the source in the HTML files rendering them. Logo and carousel images on the homepage respectively.
 
 ### Product Page
 
