@@ -202,6 +202,8 @@ From here I was able to move on to my blog / review and order enquiry models. Th
 
 As this model foundation was in place, I unfortunately ran out of time to make individual blog post pages but all the info, update, delete and add functionality can be executed from the backend DB. The pk would be used to do this, similar to the products/product_details relationship.
 
+
+
 _Review_
 Next I moved on to create the review model, form and views inside the products app. Using features already established using the main site, my thought process was to build a basic model and use the User model in the products view to build a review model using if statements to make sure the user was logged in or a super user.
 
