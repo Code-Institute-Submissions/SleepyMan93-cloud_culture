@@ -372,6 +372,16 @@ Due to the fact we are not connecting to Postgres after this setup, a migration 
 
 The last thing to do is uncomment the settings.py DATABASES and remove the one using the POSTGRES url so that the app doesn't end up in version control.
 
+7. _if statement in settings.py when running on Heroku and other dependencies_
+
+There needs to be an if statement to determine which database to run from. When running from Heroku, we can use the DATABASE_URL in the environ variables to connect with Postgres. Else, the DATABASE will be connected to sqlLite and run from there.
+
+After this, install **gunicorn**, which will act as the webserver and freeze. Then create the Procfile to tell Heroku to create a web dyno which will run unicorn and serve the django app. Inside the Procfile create the following code: "web: gunicorn (app named).wsgi:application"
+
+8. _Command line configuration_
+
+Once this is saved, login to Heroku from the terminal using Heroku Login (Don't forget to update if needed with Heroku update). Once logged in, run "heroku config:set DISABLE_COLLECTSTATIC=1 --app (heroku app name)" so that static files won't be collected when deploying. Then the Heroku app URL needs to be added to allowed hosts in the project level settings.py, as well as 'localhost' so that the project can still be run locally on Gitpod.
+
 3. _Next we need to have our code update on Heroku automatically. The easiest way to do this is linking the sites repo in Github with the Heroku app..._  
 
 Navigate to the **Deploy** tab and choose **github** as the **Deployment Menthod**. Sign in and Search for the repo name. Once found, choose **connect**.  
