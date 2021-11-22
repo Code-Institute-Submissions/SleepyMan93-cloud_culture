@@ -167,8 +167,9 @@ The payment stage and order per user definitley took the most time to set up and
 
 ### Models
 
-From here I was able to move on to my blog and review models. The first step was to create the app and model, create a few json fixtures for 3 blog categories, migrate the model changes and load the fixture. This was all successful with no issues as shown below:
+From here I was able to move on to my blog / review and order enquiry models. The first step was to create the app and model, create a few json fixtures for 3 blog categories, migrate the model changes and load the fixture. This was all successful with no issues as shown below:
 - insert image of blog admin
+As this model foundation was in place, I decided to complete the review and order enquiry models as this was more key for the e-commerce product I've been building. The blog will be a future implementation.
 
 Next I moved on to create the review model, form and views inside the products app. Using features already established using the main site, my thought process was to build a basic model and use the User model in the products view to build a review model using if statements to make sure the user was logged in or a super user:
 - insert image of review_view
@@ -192,8 +193,6 @@ The rest of the forms and edit/delete views re-worked the product logic and impl
 
 ✔️ Navigation links: All redirect to the correct pages.
 
-✔️ Footer links: All redirect to the correct pages.
-
 ✔️ Try deleting Posts when not logged in: A 403 error page appears asking user to log in/register.
 
 ✔️ Try loading an unrecognised link page: A 404 error page appears sending the user back to the homepage.
@@ -216,7 +215,9 @@ The rest of the forms and edit/delete views re-worked the product logic and impl
 
 ✔️ Try adding a review when logged in: Successfully creates a review and redirects user to the Product Detail page with review added. 
 
-✔️ Try editing a review on the Product Detial page: 
+✔️ Try editing a review on the Product Detial page: Successfully edits the users review and returns to the Product Detail page.
+
+✔️ Try deleting a review on the Product Detial page: Successfully deletes the users review and returns to the Products page.
 
 ✔️ Try deleting a review while on the Product Details page: User successfully deletes post and is taken back to the individual product page with the post removed
 
@@ -277,8 +278,13 @@ In keepting with most of my errors, the problem was due to the key not being in 
 ### Stripe
 
 Amongst a big heap of errors when setting up Stripe payments, mostly syntax issues, this JS error caused the most problems. It prevented webhooks being sent successfully to Stripe and therefore preventing order details and other hooks being sent to Stripe. After seeking help from the course tutors, who also had issues locating the problem, we managed to work out the Sum function was not being ran properly. Although it indicated a JS issue stating "Cannot set properties of null (setting 'textContent'), this part of the stripe_elements JS was present and supposed to fill with an error message. This caused the confusion as the error was actually originating from the "checkout.model", I retyped the sum model, making sure to capitilise the S and the Stripe payments begun to work.
-- insert stripe_js_error
+![Stripe JS error](media/readme/stripe_js_error.png)
 
+### Models
+
+When implementing my review model, the features of the review all appeared on the individual product pages but found a reverse error later on when trying to load the review form. There was no issue with the model/view but the "product_details" page wouldn't load. 
+![Product Details Error](media/readme/product_details_error.png)
+Using ctrl+f, I searched for **product_detail** and changed the syntax to the correct **product_details** relating to the template name. Once corrected, I was still presented with the error. The problem was coming from my template, again having product_detail in one of my 'urls', once changed the page rendered correctly with the review form attached.
 
 ## Bugs
 
@@ -320,7 +326,7 @@ The bug was due to an issue with my "div" content. All the content, including pr
 ### Profile Page
 
 Found a visual bug when adding the full name field to the profile form:
-- insert image of fullname_bug
+![Full Name Bug](media/readme/full_name_bug.png)
 The bug was due to an error in my profiles model. For the 'default.full_name' input, I assigned it as a TextField which produced a big and unnecessary text box for the name input. Amended it to CharField and this resolved the bug.
 
 

@@ -70,6 +70,7 @@ def product_details(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     reviews = product.reviews.filter()
     new_review = None
+    template = 'products/product_details.html'
 
     if request.method == 'POST':
         review_form = ReviewForm(data=request.POST)
@@ -86,7 +87,7 @@ def product_details(request, product_id):
             review_form = ReviewForm()
 
             messages.success(request, 'Review successfully posted.')
-            return redirect(reverse('product_detail', args=[product.id]))
+            return redirect(reverse('product_details', args=[product.id]))
     else:
         review_form = ReviewForm()
 
@@ -96,7 +97,7 @@ def product_details(request, product_id):
         'review_form': review_form
     }
 
-    return render(request, 'products/product_details.html', context)
+    return render(request, template, context)
 
 @login_required
 def edit_review(request, review_id):
@@ -108,7 +109,7 @@ def edit_review(request, review_id):
                 review_form.save()
                 messages.success(
                     request, 'Thanks. You have successfully updated your Review')
-                return redirect(reverse('product_detail'))
+                return redirect(reverse('product_details'))
             else:
                 messages.error(request, 'Error! \
                     Please check your form is valid.')
