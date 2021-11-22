@@ -3,7 +3,7 @@ Cloud Culture
 #### Code Institute Full Stack Development Dipoloma: Milestone Project 4 - Fullstack Framework
 ##### Created by William Donovan
 
-![Project Displays](static/images/cover_photo.png)
+[View Demo](https://cloud-culture.herokuapp.com/)
 
 - SUPERUSER LOGIN: testfinal@test.com
 - SUPERUSER PASSWORD: 1t2r3e4w5q
@@ -123,6 +123,8 @@ Below is the colour palette I've used to help design the site:
 # Features / Future Implementations
 
 As I didn't have time, when I keep developing the site, I would like to implement the backend framework I have setup for the Blog Section. I managed to render the blog model onto the app but it's not optomised how I would have liked it. 
+
+Additionally to this, a product enquiry form/contact ability would be a great addition for user experience.
 
 --------------------
 
