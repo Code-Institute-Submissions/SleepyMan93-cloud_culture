@@ -382,6 +382,8 @@ After this, install **gunicorn**, which will act as the webserver and freeze. Th
 
 Once this is saved, login to Heroku from the terminal using Heroku Login (Don't forget to update if needed with Heroku update). Once logged in, run "heroku config:set DISABLE_COLLECTSTATIC=1 --app (heroku app name)" so that static files won't be collected when deploying. Then the Heroku app URL needs to be added to allowed hosts in the project level settings.py, as well as 'localhost' so that the project can still be run locally on Gitpod.
 
+After all has been saved and pushed to github, we need to push changes to Heroku. If the app was set up online and not in the CLI, run "heroku git:remote -a (heroku app-name)" and then try running git push heroku master.
+
 3. _Next we need to have our code update on Heroku automatically. The easiest way to do this is linking the sites repo in Github with the Heroku app..._  
 
 Navigate to the **Deploy** tab and choose **github** as the **Deployment Menthod**. Sign in and Search for the repo name. Once found, choose **connect**.  
