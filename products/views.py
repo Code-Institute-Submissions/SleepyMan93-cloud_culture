@@ -81,10 +81,10 @@ def product_details(request, product_id):
             """ Create Review """
             new_review = review_form.save(commit=False)
             """ Assign user to review """
-            request.user = new_review.review_user
+            new_review.review_user = request.user
             new_review.save()
             """ Assign review to product """
-            product_review = new_review.product
+            new_review.product_id = product
             new_review.save()
 
             review_form = ReviewForm()

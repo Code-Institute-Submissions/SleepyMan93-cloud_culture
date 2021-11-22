@@ -45,6 +45,8 @@ Cloud Culture
    - Tools and Databases Used
 6. [Project Deployment](#deployment)
    - Process of Deployment
+      * Heroku
+      * AWS S3 Bucket
    - How to create Local Version
 7. [References](#references)
 8. [Acknowledgements](#acknowledge)
@@ -471,6 +473,25 @@ Two new packages are installed for this:
 
 Once installed, make sure to freeze the requirements.txt file so that Heroku is up to date and add storages into the list of installed apps.
 
+To connect Django to s3, you'll need to add some parameters in settings.py to tell Django which bucket it is communicating with:
+      AWS_STORAGE_BUCKET_NAME = 'bucket name'
+      AWS_S3_REGION_NAME = 'region'
+      AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+      AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+      AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+- Go to Heroku, in the convig vars, add USE_AWS = True. Add the AWS access key and secret access key
+- Remove disable collectstatic from Heroku config vars
+- Create a file called custom_storages.py, adding the following code:
+
+- In settings.py add the following statements to tell Django where the static files will come form in production:
+      STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+      STATICFILES_LOCATION = 'static'
+      DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+      MEDIAFILES_LOCATION = 'media'
+
+- Then git commit all changes
+
+
 ## How to create Local Version
 
 #### Clone the repository and run locally:
@@ -484,19 +505,6 @@ Once installed, make sure to freeze the requirements.txt file so that Heroku is 
 1. Press Enter
 1. The site will then be cloned
 1. Install all the project dependencies by typing `pip install -r requirements.txt`
-
-#### Set Up Environment Variables:
-
-1. Create an env.py file in your root directory. **touch env.py** in the terminal.
-1. Type env.py into the.gitignore file and click save.
-1. Add the following to your env.py file with the applicable variables: 
-```
-import os
-os.environ["MONGO_URI"] = "mongodb+srv://username:password@myfirstcluster-strtg.mongodb.net/plant_swap?retryWrites=true&w=majority"
-os.environ["IP"] = "0.0.0.0"
-os.environ["PORT"] = "5000"
-os.environ["SECRET_KEY"] = "Your Secret Key"
-```
 
 [Back to Top](#table-of-contents)
 
