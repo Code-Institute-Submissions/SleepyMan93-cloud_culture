@@ -354,9 +354,23 @@ The bug was due to an error in my profiles model. For the 'default.full_name' in
 
 Using the command **pip3 freeze --local > requirements.txt** in the terminal will create a requirements.txt file with all the dependencies listed to run the Heroku App. Whenever new packages are installed, remeber to update the .txt file | Using the command **echo web: python app.py > Procfile** in ther terminal will create a Procfile, which Heroku uses to know which Python App to run when the site is loaded.  
 
-2. _After initial set up of the Flask app, our next step is to get Heroku to update, recognise and connect with our site..._  
+2. _After initial set up, our next step is to get Heroku to update, recognise and connect with our site..._  
 
-To do this, you need to make an account on Heroku, upon signing in, click **New** to create the app. On the next screen, produce a name for the app, making sure to use lowercase and the region closest to you. If the domain name is available, finish by clicking **Create App**.  
+To do this, you need to make an account on Heroku, upon signing in, click **New** to create the app. On the next screen, produce a name for the app, making sure to use lowercase and the region closest to you. If the domain name is available, finish by clicking **Create App**.
+
+4. _Upon creating the app, we need to set up the postgres and install required files to gitpod_
+
+Navigating to the resources tab, search for POSTGRES and choose the free Heroku plan. Then move back to gitpod and install **dj_database_url** and **psycopg2-binary**. Not forgetting to update the requirements.txt file with the new installations and importing **dj_database_url** to the top of our project level settings.
+
+5. _Now to make some changes to settings.py_
+
+Coment out the DATABASES and replace the default database with a call to **dj_database_url.parse** passing in the database URL from Heroku. This can be found under the 'Settings' tab and revealing config vars. Make sure to place the url in quotation marks.
+
+6. _Postgres migration_
+
+Due to the fact we are not connecting to Postgres after this setup, a migration of all the app models in neccessary for the app to run. Simply run migrate as you would have normally to set up all the previous apps localy. As I've used json fixtures for my app, I can just load the data from these on to the new Postgres host. Making sure to create a new superuser after these migrations so that you are able to login.
+
+The last thing to do is uncomment the settings.py DATABASES and remove the one using the POSTGRES url so that the app doesn't end up in version control.
 
 3. _Next we need to have our code update on Heroku automatically. The easiest way to do this is linking the sites repo in Github with the Heroku app..._  
 
