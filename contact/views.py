@@ -16,13 +16,12 @@ def order_inquiry(request):
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
-        inquiry_form = {
+        order_inquiry_form = {
             'name': request.POST.get('name'),
             'contact_email': request.POST.get('contact_email'),
             'order_number': request.POST.get('order_number'),
             'message': request.POST.get('message'),
         }
-        # send email
         subject = render_to_string(
             'order_inquiry/order_inquiry_emails/inquiry_subject.txt',
             {'inquiry': inquiry_form}

@@ -84,7 +84,7 @@ def product_details(request, product_id):
             request.user = new_review.review_user
             new_review.save()
             """ Assign review to product """
-            product_review = new_review.product_id
+            product_review = new_review.product
             new_review.save()
 
             review_form = ReviewForm()
