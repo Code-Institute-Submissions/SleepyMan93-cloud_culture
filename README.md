@@ -97,9 +97,30 @@ For my site font I decided to use a variation of Sans Serif called Rubik. I chos
 I decided to use Font Awesome Icons again for this project.
 [Font Awesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2)
 
+## Colour Scheme
+Below is the colour palette I've used to help design the site:
+![Cloud Culture Pallette](media/readme/cloud_culture_palette.png)
+
 # Sitemap / Wireframes
 
+## Homepage 
+![Homepage](media/readme/Home-Page.png)
+
+## Category Page
+![Category Page](media/readme/Category-Page.png)
+
+## Solo Products
+![Solo Products](media/readme/Solo-Product-Page.png)
+
+## Create Account
+![Create Account](media/readme/Create-Account-Page.png)
+
+## Login Page
+![Login Page](media/readme/Login-Page.png)
+
 # Features / Future Implementations
+
+As I didn't have time, when I keep developing the site, I would like to implement the backend framework I have setup for the Blog Section. I felt the order enquiry model is better initially for better customer experience and userbility
 
 --------------------
 
@@ -186,10 +207,15 @@ Next I moved on to create the review model, form and views inside the products a
 - insert image of review_view
 
 The rest of the forms and edit/delete views re-worked the product logic and implemented crispy forms with the fields provided to the user. After a few tweaks, the terminal presented no errors and I could migrate the model into the products app. Once migrated, I focused on rendering the basic model information into the **product_details.html**. After building the template, I knew the django templating logic was working because "No reviews yet" was rendering on every individual product page:
-- insert review_view_success
+![Review Render Success](media/readme/review_view_success.png)
 
 Ran into an error with the review section which meant the form was saving, this was validated with the information saving to the admin backend DB but the user and product_id were not storing with the POST. Eventually, I found the issue. My data being defined in the add review section for product_details view was reversed. I had the variable first and data input second. Worked out the issue by realising the form data being stored correctly was the opposite way.
 ![Successful Review](media/readme/successful_review.png)
+
+### Account Login
+
+After all completed steps for deployment, the last thing to check was the email setup as before the terminal was needed for this. I made a temporary email and used this to sign up. Once sent, the temp email recieved one inbox from my gmail account associated with the app and using the link, I was able to successfully confirm and sign up:
+![Email Signup](media/readme/email_signup.png)
 
 
 
@@ -299,6 +325,14 @@ Amongst a big heap of errors when setting up Stripe payments, mostly syntax issu
 When implementing my review model, the features of the review all appeared on the individual product pages but found a reverse error later on when trying to load the review form. There was no issue with the model/view but the "product_details" page wouldn't load. 
 ![Product Details Error](media/readme/product_details_error.png)
 Using ctrl+f, I searched for **product_detail** and changed the syntax to the correct **product_details** relating to the template name. Once corrected, I was still presented with the error. The problem was coming from my template, again having product_detail in one of my 'urls', once changed the page rendered correctly with the review form attached.
+
+Another error I encountered with the review model was attaching the product ID and review_user data to the review form. As you can see below, all the other facets of the review form data have been stored bar these:
+![Review Data Error](media/readme/review_admin_error.png)
+
+It took a while to source the issue but in the end, the error was coming from the view code. I assessed how the review form data was being correctly stored but not the other two aspects. Before correcting, I had the "data = object", for example **new_review.product_id = product** when semantically, it needed to be reversed which is why the "Create Review" section was working correctly. Below is the corrected form view:
+![Review Form View](media/readme/review_view.png)
+
+
 
 ## Bugs
 
