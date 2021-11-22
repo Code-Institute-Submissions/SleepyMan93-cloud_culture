@@ -496,6 +496,7 @@ To connect Django to s3, you'll need to add some parameters in settings.py to te
       MEDIAFILES_LOCATION = 'media'
 
 - Then git commit all changes
+- For all the media files, just navigate to the S3 bucket, add a folder named 'media' and upload all the site images here making sure to grant public access.
 
 
 ## How to create Local Version
