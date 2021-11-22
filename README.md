@@ -384,17 +384,92 @@ Once this is saved, login to Heroku from the terminal using Heroku Login (Don't 
 
 After all has been saved and pushed to github, we need to push changes to Heroku. If the app was set up online and not in the CLI, run "heroku git:remote -a (heroku app-name)" and then try running git push heroku master.
 
-3. _Next we need to have our code update on Heroku automatically. The easiest way to do this is linking the sites repo in Github with the Heroku app..._  
+9. _Next we need to have our code update on Heroku automatically. The easiest way to do this is linking the sites repo in Github with the Heroku app..._  
 
 Navigate to the **Deploy** tab and choose **github** as the **Deployment Menthod**. Sign in and Search for the repo name. Once found, choose **connect**.  
 
-4. _Due to the fact we have hidden KEY Environment Variables in the **env.py** file, that Heroku won't be able to retrieve from the **GitHub Repo**, we need to store this in Herkou's **Config Vars**..._  
+10. _Due to the fact we have hidden KEY Environment Variables in the **env.py** file, that Heroku won't be able to retrieve from the **GitHub Repo**, we need to store this in Herkou's **Config Vars**..._  
 
 Under the settings tab you will find the **Config Vars** section. Reveal the section and copy all the **KEY** and **VALUE** pairs from the **env.py** file. Making sure not to include any of the **quotation marks**.  
 
-5. _For the last stage, it is key to make sure the **requirements.txt** and **Procfile** are pushed to the GitHub Repo..._   
+11. _For the last stage, it is key to make sure the **requirements.txt** and **Procfile** are pushed to the GitHub Repo..._   
 
 Once these files are successfully pushed to GitHub, make sure to **Enable Automatic Deploy**. You can then click **Deploy Branch**, generally **main** or **master**. The Heroku app will take a few minutes to set up the connection. Once successful, every commit pushed to GitHub will update the Heroku app and Live Site.
+
+### AWS S3
+
+1. _Create AWS account_
+
+Head to aws.amazon.services and create an account following the steps. Once signed in, go to the 'Management Console'
+
+2. _S3 setup_
+
+Search for S3 in the services search section. Clck on the 'bucket' link attached to the S3 link and create a new bucket, matching the name with the Heroku app for consistency. Make sure when setting this up to uncheck 'Block **all** public access', as the app will need to allow users to access the static files.
+
+3. _bucket configuration_
+
+Access the bucket and head to properties. Scroll to the bottom and enable the section for 'static web hosting' so that we can host the static site. After this head to the permissions tab and paste in the following CORS configuration:
+                     [
+            {
+                  "AllowedHeaders": [
+                     "Authorization"
+                  ],
+                  "AllowedMethods": [
+                     "GET"
+                  ],
+                  "AllowedOrigins": [
+                     "*"
+                  ],
+                  "ExposeHeaders": []
+            }
+            ]
+
+Next a policy needs to be generated for the bucket. Navigate up slightly on the same page, click edit on policy settings and generate a new policy. When redirected, select:
+- S3 Bucket Policy
+- Use * as the principal and the Action set to 'Get Object'
+- Copy the ARN (Amazon Resource Name) from the previous Policy tab and paste into the ARN section of the form
+- Click Add Statement, Generate Policy and then copy the Policy into the JSON handler on the previous tab. Make sure to add /* at the end of the resource key to allow access to all resources
+- Lastly, edit the ACL found on the same page and allow list permissions for everyone.
+
+4. _IAM Setup_
+
+Now that the s3 bucket is set up. You now need to create a user in order to access the bucket. To do this use another Amazon service called IAM (identity and Access Management):
+
+- Search for IAM the same way previously done for S3
+- Click on groups and create a new group. Ignore other sections.
+- Navigate to Policy tab on the left and create policy
+- Head to the JSON tab and import managed policies. Searching for S3 and import full access policy.
+- Find the ARN from the S3 bucket policy and paste into the IAM JSON tab. A list will be used here, one item for the bucket, one adds another rule for all files/folders in bucket:
+         {
+            "Version": "2012-10-17",
+            "Statement": [
+               {
+                     "Effect": "Allow",
+                     "Action": [
+                        "s3:*",
+                        "s3-object-lambda:*"
+                     ],
+                     "Resource": [
+                        "arn:aws:s3:::cloud-culture",
+                        "arn:aws:s3:::cloud-culture/*"
+                     ]
+               }
+            ]
+         }
+- Review the policy making sure to add a name and description, then click create policy
+- Head back to User Groups in the IAM section, click on the new manage group. Once inside, click policies and choose the dropdown Add Permissions, choosing Attach Policies
+- Attach the new policy just created by checking the box and attach policies
+- Next we need to create a user for the group. Head to users and create user with a name and giving programmatic access
+- Attach this new user to the group and click through to the end.
+- Once successfully added, download the CSV file (VERY IMPORTANT) as we can't re-access this
+
+5. _Connect Django to Bucket_
+
+Two new packages are installed for this:
+**boto3**
+**django-storages**
+
+Once installed, make sure to freeze the requirements.txt file so that Heroku is up to date and add storages into the list of installed apps.
 
 ## How to create Local Version
 
