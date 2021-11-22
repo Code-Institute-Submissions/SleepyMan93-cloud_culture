@@ -5,11 +5,11 @@ Cloud Culture
 
 ![Project Displays](static/images/cover_photo.png)
 
-SUPERUSER LOGIN: testfinal@test.com
-SUPERUSER PASSWORD: 1t2r3e4w5q
+- SUPERUSER LOGIN: testfinal@test.com
+- SUPERUSER PASSWORD: 1t2r3e4w5q
 
-ADMIN LOGIN: new_admin
-ADMIN PASSWORD: 1t2r3e4w5q
+- ADMIN LOGIN: new_admin
+- ADMIN PASSWORD: 1t2r3e4w5q
 
 
 # Table of Contents 

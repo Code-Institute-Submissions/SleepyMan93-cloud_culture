@@ -48,6 +48,13 @@
                     </th>
                 </tr>
                 {% endif %}
+                {% if blog.body %} 
+                <tr>
+                    <th scope="row">
+                        <h3 class="mb-0">{{ blog.body }}</h3>
+                    </th>
+                </tr>
+                {% endif %}
             {% endfor %}
             </tbody>
         </table>
