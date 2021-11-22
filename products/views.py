@@ -46,11 +46,11 @@ def all_products(request):
                 return redirect(reverse(
                     'products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(
+                name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
-
 
     context = {
         'products': products,
@@ -61,9 +61,11 @@ def all_products(request):
 
     return render(request, 'products/products.html', context)
 
+
 def product_details(request, product_id):
     """ 
-    A view to return individual products, including details. A 404 error message if not the product
+    A view to return individual products, including details. 
+    A 404 error message if not the product
     and render review form for each product
     """
 
@@ -99,6 +101,7 @@ def product_details(request, product_id):
 
     return render(request, template, context)
 
+
 @login_required
 def edit_review(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
@@ -108,7 +111,7 @@ def edit_review(request, review_id):
             if review_form.is_valid():
                 review_form.save()
                 messages.success(
-                    request, 'Thanks. You have successfully updated your Review')
+                    request, 'Review successfully updated')
                 return redirect(reverse('product_details'))
             else:
                 messages.error(request, 'Error! \
@@ -147,7 +150,7 @@ def delete_review(request, review_id):
 def add_product(request):
     """ Add a product to the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners are allowed to perform this action')
+        messages.error(request, 'Action not allowed!')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -157,7 +160,8 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_details', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, (
+                'Failed to add product. Please fill out the form.'))
     else:
         form = ProductForm()
         
@@ -173,7 +177,7 @@ def add_product(request):
 def edit_product(request, product_id):
     """ Edit a product via the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners are allowed to perform this action')
+        messages.error(request, 'Action not allowed!')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
@@ -184,7 +188,8 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_details', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please make sure the form is complete.')
+            messages.error(request, (
+                'Failed to update product. Please fill out the form.'))
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -202,7 +207,7 @@ def edit_product(request, product_id):
 def delete_product(request, product_id):
     """ Delete product from the site """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners are allowed to perform this action')
+        messages.error(request, 'Action not allowed!')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
