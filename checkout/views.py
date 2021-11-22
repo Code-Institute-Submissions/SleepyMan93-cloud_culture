@@ -14,6 +14,7 @@ from bag.contexts import bag_contents
 import stripe
 import json
 
+
 @require_POST
 def cache_checkout_data(request):
     try:
@@ -67,7 +68,8 @@ def checkout(request):
                         )
                         order_per_item.save()
                     else:
-                        for nicotine, quantity in item_data['items_by_nicotine'].items():
+                        for nicotine, quantity in item_data[
+                              'items_by_nicotine'].items():
                             order_per_item = OrderPerItem(
                                 order=order,
                                 product=product,
@@ -81,16 +83,19 @@ def checkout(request):
                         "Please get in contact for assistance!")
                     )
                     order.delete()
-                    return redirect(reverse('view_bag'))
+                    return redirect(reverse(
+                        'view_bag'))
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse(
+                'checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please check your information again.')
     else:            
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "Uhohh! There's nothing in your bag currently")
+            messages.error(
+                request, "Uhohh! There's nothing in your bag currently")
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
@@ -133,6 +138,7 @@ def checkout(request):
 
         return render(request, template, context)
 
+
 def checkout_success(request, order_number):
     """
     A view to handle successful checkouts
@@ -166,7 +172,7 @@ def checkout_success(request, order_number):
         order number if you have any issues.')
 
     if 'bag' in request.session:
-       del request.session['bag']
+        del request.session['bag']
 
     template = 'checkout/checkout_success.html'
     context = {

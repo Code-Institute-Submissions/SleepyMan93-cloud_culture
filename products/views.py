@@ -63,7 +63,7 @@ def all_products(request):
 
 
 def product_details(request, product_id):
-    """ 
+    """
     A view to return individual products, including details. 
     A 404 error message if not the product
     and render review form for each product
@@ -166,7 +166,7 @@ def add_product(request):
                 'Failed to add product. Please fill out the form.'))
     else:
         form = ProductForm()
-        
+
     template = 'products/add_product.html'
     context = {
         'form': form,

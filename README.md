@@ -69,7 +69,6 @@ The target audience for this will be predominantly 18-50. Vaping in the UK is no
 * Be able to browse through all the products and blog posts
 * Have the ability to add items to my bag
 * Be able to remove, ammend and update the bag
-* Be able to contact the site
 
 ## As a Registered User I want to:
 * Be able to fast checkout seeing as my details will already be stored/saved
@@ -77,12 +76,12 @@ The target audience for this will be predominantly 18-50. Vaping in the UK is no
 * Have the ability to make blog posts as my username
 * Have the ability to log in with my details
 * Be able to update my shipping and billing details
-* Be able to contact the site regarding an order
+* Be able to leave/edit and delete review
 
 ## As the Site Owner I want to:
 * Be able to log in to the Admin Panel
 * Be able to add, update or remove products, without vistiting the admin panel
-* Receive email notifications when a user submits through the contact page
+* Make blog posts via the admin panel
 
 # Design Principles
 
@@ -97,7 +96,7 @@ For my site font I decided to use a variation of Sans Serif called Rubik. I chos
 I decided to use Font Awesome Icons again for this project.
 [Font Awesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2)
 
-## Colour Scheme
+## Colours
 Below is the colour palette I've used to help design the site:
 ![Cloud Culture Pallette](media/readme/cloud_culture_palette.png)
 
@@ -118,9 +117,12 @@ Below is the colour palette I've used to help design the site:
 ## Login Page
 ![Login Page](media/readme/Login-Page.png)
 
+# DB Schema 
+![DB Schema](media/readme/db_schema.png)
+
 # Features / Future Implementations
 
-As I didn't have time, when I keep developing the site, I would like to implement the backend framework I have setup for the Blog Section. I felt the order enquiry model is better initially for better customer experience and userbility
+As I didn't have time, when I keep developing the site, I would like to implement the backend framework I have setup for the Blog Section. I managed to render the blog model onto the app but it's not optomised how I would have liked it. 
 
 --------------------
 
@@ -158,7 +160,6 @@ Upon setting up my Django environment and establising allauth is functional, the
 Inside the 'templates' folder is where these and my other frontend templates are stored. 
 
 The next step was to create the 'home' app in which my 'index' and other frontend page views would be rendered from. After setting up my first app view, if working, the 'index.html' should render 'We Are Working' as a bootstrap success class. This helped with making sure not only the app view was working but also Bootstrap and the JS script tags.
-- Insert screen shot of We Are Working
 
 After setting up all my functionality, I could start to build the homepage. My first stage was to create a basic template using Bootstrap and some basic HTML. The process started by making a header for nav links, search bar and logo, the main banner image container and the basic 'Shop Now' button. Once all these components were working and in place, I linked my **base.css** style sheet to the **base.html** file and styled the content. Below is an image of the groundwork used to build the homepage:
 ![Basic Homepage](media/readme/homepage_basic.png)
@@ -199,10 +200,9 @@ The payment stage and order per user definitley took the most time to set up and
 _Blog_
 From here I was able to move on to my blog / review and order enquiry models. The first step was to create the app and model, create a few json fixtures for 3 blog categories, migrate the model changes and load the fixture. This was all successful with no issues as shown below:
 ![Admin Blog](media/readme/blog_admin.png)
+![Blog post success](media/readme/add_blog_success.png)
 
 As this model foundation was in place, I unfortunately ran out of time to make individual blog post pages but all the info, update, delete and add functionality can be executed from the backend DB. The pk would be used to do this, similar to the products/product_details relationship.
-
-
 
 _Review_
 Next I moved on to create the review model, form and views inside the products app. Using features already established using the main site, my thought process was to build a basic model and use the User model in the products view to build a review model using if statements to make sure the user was logged in or a super user.
@@ -218,14 +218,19 @@ Ran into an error with the review section which meant the form was saving, this 
 After all completed steps for deployment, the last thing to check was the email setup as before the terminal was needed for this. I made a temporary email and used this to sign up. Once sent, the temp email recieved one inbox from my gmail account associated with the app and using the link, I was able to successfully confirm and sign up:
 ![Email Signup](media/readme/email_signup.png)
 
-
 ## HTML CSS and Python validation checks
 
-### HTML
+### HTML - W3C
+I only had 12 issues which I corrected.
+- All code passed with no warning errors
+![HTML Validation](media/readme/html_validation.png)
 
-### CSS
+### CSS - W3C
+- All code passed with no warnings
+![CSS Validation](media/readme/css_validation.png)
 
 ### Python
+- All Pep8 compliant now after fixed errors
 
 ## User Testing 
 
@@ -331,8 +336,6 @@ Another error I encountered with the review model was attaching the product ID a
 
 It took a while to source the issue but in the end, the error was coming from the view code. I assessed how the review form data was being correctly stored but not the other two aspects. Before correcting, I had the "data = object", for example **new_review.product_id = product** when semantically, it needed to be reversed which is why the "Create Review" section was working correctly. Below is the corrected form view:
 ![Review Form View](media/readme/review_view.png)
-
-
 
 ## Bugs
 
@@ -540,7 +543,6 @@ To connect Django to s3, you'll need to add some parameters in settings.py to te
 - Then git commit all changes
 - For all the media files, just navigate to the S3 bucket, add a folder named 'media' and upload all the site images here making sure to grant public access.
 
-
 ## How to create Local Version
 
 #### Clone the repository and run locally:
@@ -559,7 +561,7 @@ To connect Django to s3, you'll need to add some parameters in settings.py to te
 
 
 # References <a name="references"></a>
-- Aside from [StackOverflow](htttps://www.stackoverflow.com) and some basics from the Code Institute Mini Project, all the code was produced by me.
+- Aside from [StackOverflow](htttps://www.stackoverflow.com), slack, and foundtaions from the Code Institute Boutique Ado Mini Project, all the code was produced by me.
 
 # Acknowledgements <a name="acknowledge"></a>
 I'd really love to thank Gerry my Tutor for helping me with my project. He gave me some great insight into principles, structure and 
