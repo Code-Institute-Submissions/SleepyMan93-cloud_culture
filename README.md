@@ -200,7 +200,7 @@ _Blog_
 From here I was able to move on to my blog / review and order enquiry models. The first step was to create the app and model, create a few json fixtures for 3 blog categories, migrate the model changes and load the fixture. This was all successful with no issues as shown below:
 ![Admin Blog](media/readme/blog_admin.png)
 
-As this model foundation was in place, I decided to complete the review and order enquiry models as this was more key for the e-commerce product I've been building. The blog will be a future implementation.
+As this model foundation was in place, I unfortunately ran out of time to make individual blog post pages but all the info, update, delete and add functionality can be executed from the backend DB. The pk would be used to do this, similar to the products/product_details relationship.
 
 _Review_
 Next I moved on to create the review model, form and views inside the products app. Using features already established using the main site, my thought process was to build a basic model and use the User model in the products view to build a review model using if statements to make sure the user was logged in or a super user.
